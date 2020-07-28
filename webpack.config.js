@@ -6,7 +6,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: {
       index: './src/js/index.js',
-      admin: './src/js/admin.js'},
+      admin: './src/js/admin.js',
+      registro: './src/js/registro.js'},
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -127,7 +128,7 @@ module.exports = {
           useShortDoctype: true
         },
         inject: true,
-        chunks: ['admin'],
+        chunks: ['registro'],
         filename: './registro.html'
     }),
     new HtmlWebpackPlugin({
