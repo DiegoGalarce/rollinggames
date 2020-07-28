@@ -1,11 +1,151 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/1bc012d9ff.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <img src="img/prueba.png" alt="">
+    <header>
+        <nav class="navbar navbar-expand-lg text-light">
+            <img src="img/logo-color.png" width="70px" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html">acerca de</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="admin.html">ADMINISTRADOR</a>
+                    </li>
+                    </form>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="row">
+            <div class="col-10">
+                <h1 class="display-4 mt-2 text-light">Administrar productos</h1>
+            </div>
+        </section>
+        <section>
+            <hr>
+            <article class="row my-4">
+                <div class="col-10 text-center text-light">
+                    <h3>Tabla de productos</h3>
+                </div>
+                <div class="col-2 text-light">
+                    <button class="btn btn-outline-light" data-toggle="modal" data-target="#modal">Nuevo</button>
+                </div>
+            </article>
+            <article>
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Publicado</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaProducto" class="text-light">
+                        <tr>
+                            <th scope="row">123</th>
+                            <td>Cs-Global ofensive</td>
+                            <td>Estrategia</td>
+                            <td>Descripcion breve</td>
+                            <td><i class="far fa-check-square fa-2x"></i></td>
+                            <td>
+                                <i class="fas fa-trash-alt fa-2x mr-3"></i>
+                                <i class="far fa-edit fa-2x mr-2"></i>
+                                <i class="far fa-star fa-2x"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-dark">
+                    <form onsubmit="decidir(event);" id="formulario">
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Codigo</label>
+                            <input type="number" class="form-control" id="codigo" placeholder="Ingrese un codigo"
+                                required>
+                            <div class="invalid-feedback">
+                                Debe ingresar un codigo
+                            </div>
+                            <div class="valid-feedback">
+                                Codigo correcto
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Nombre</label>
+                            <input type="text" class="form-control" id="nombre"
+                                placeholder="IRON MAN - AVENGERS INFINITY WAR" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar un Nombre
+                            </div>
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">categoria</label>
+                            <input type="text" class="form-control" id="numSerie" placeholder="2593" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoria
+                            </div>
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion"
+                                placeholder="Ingrese una Descripcion" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar una descripcion
+                            </div>
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-light text-center py-4">
+        <p>&copy; Todos los derechos reservados </p>
+    </footer>
 </body>
+
 </html>
