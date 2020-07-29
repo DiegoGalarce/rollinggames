@@ -1,8 +1,12 @@
 body{
-   background-color: #171D21;
+   background-color:#DDDDDD;
 }
 
 .navbar{
     background-color: #19405B;
+}
+
+#tablaProductos{
+    background-color: whitesmoke;
 }
 
