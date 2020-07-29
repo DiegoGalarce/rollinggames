@@ -7,7 +7,8 @@
     <title>Rolling Games</title>
     <meta name="author" content="Mauricio G. Castro, Daiana Olmi, Diego Galarce, Luciano Chipolina">
     <meta name="description" content="Pagina web dedicada a la venta de juegos Indie">
-    <meta name="keywords" content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia">
+    <meta name="keywords"
+        content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia">
 </head>
 
 <body>
@@ -45,27 +46,85 @@
     </header>
     <section class="fondo container-fluid margensup">
         <article class="container">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1 class="text-light text-center display-5">Rolling Games</h1>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <div class="row">
+                <section class="card my-5 azul2 col-sm-12 col-lg-6">
+                    <div class="card-header verde mt-2">
+                        <h5 class="card-title text-light text-center mt-2">Formulario de Contacto</h5>
+                    </div>
+                    <div class="card-body text-light">
+                        <form onsubmit="validarTodo(event)">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Gabe Newell"
+                                    onblur="revisar(this)">
+                                <div class="invalid-feedback">
+                                    Debe ingresar un nombre
+                                </div>
+                                <div class="valid-feedback">
+                                    Todo bien wachin :D
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="gabenewell@tumail.com"
+                                    onblur="validarEmail(this)">
+                                <div class="invalid-feedback">
+                                    Debe ingresar un mail válido
+                                </div>
+                                <div class="valid-feedback">
+                                    Buenaaardou :D
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input type="number" class="form-control" id="telefono" placeholder="381 5727 950"
+                                    onblur="validarNumeros(this)">
+                                <div class="invalid-feedback">
+                                    Debe ingresar un nº de Teléfono válido
+                                </div>
+                                <div class="valid-feedback">
+                                    Te enviaré un wasap :P
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Consulta</label>
+                                <textarea class="form-control" id="consulta"
+                                    placeholder="Ingrese su consulta"
+                                    onblur="validarConsulta(this)"></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una consulta válida (al menos 10 caracteres)
+                                </div>
+                                <div class="valid-feedback">
+                                    ¿Eso vas a preguntar? Ta bien
+                                </div>
+                            </div>
+                            <!-- FORM CHECK -->
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="terminos">
+                                    <label class="form-check-label">
+                                        Estoy de acuerdo con los términos y condiciones.
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        Para continuar debe aceptar los términos y condiciones
+                                    </div>
+                                    <div class="valid-feedback">
+                                        Buenaaardooooooo!
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn botonredondeado gradientevioleta px-5 text-light"
+                                type="submit">Enviar</button>
+                        </form>
+                        <div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">
+                            A simple primary alert—check it out!
+                        </div>
+                    </div>
+                </section>
+                <div class="mt-5 col-sm-6 d-none d-sm-block d-none d-md-block align-self-center">
+                    <img src="img/contacto/contacto-side.png" alt="imagen de hollow knight">
+                </div>
+            </div>
         </article>
     </section>
     <footer class="verde text-center py-4">
@@ -75,15 +134,18 @@
                     <h2 class="text-center display-5 text-light"> ¿Ya te Registraste?
                     </h2>
                     <div class="d-flex flex-wrap justify-content-center">
-                        <a href="registro.html"><small class="mr-4 text-decoration-none text-light">Registrarme</small> </a>
-                        <a href="login.html"><small class="ml-4 text-decoration-none text-light">Iniciar Sesión</small> </a>
+                        <a href="registro.html"><small class="mr-4 text-decoration-none text-light">Registrarme</small>
+                        </a>
+                        <a href="login.html"><small class="ml-4 text-decoration-none text-light">Iniciar Sesión</small>
+                        </a>
                     </div>
                 </button>
                 <div class="container text-center">
                     <p class="lead my-4 d-flex flex-wrap justify-content-around">
                         <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Rolling Games</strong>
                         </a>
-                        <a href="nosotros.html"> <strong class="mx-2 text-decoration-none text-light">Acerca de Nosotros</strong>
+                        <a href="nosotros.html"> <strong class="mx-2 text-decoration-none text-light">Acerca de
+                                Nosotros</strong>
                         </a>
                         <a href="contacto.html"> <strong class="mx-2 text-decoration-none text-light">Contacto</strong>
                         </a>
@@ -98,7 +160,8 @@
                         <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
                                     class="fab fa-facebook-square fa-2x mr-2 text-light "></i></a>
                             /RollingGames</div>
-                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i class="fab fa-twitter-square fa-2x mx-2 text-light"></i></a>
+                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
+                                    class="fab fa-twitter-square fa-2x mx-2 text-light"></i></a>
                             /RollingGames</div>
                         <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
                                     class="fab fa-instagram-square fa-2x ml-2 text-light"></i></a>
@@ -110,4 +173,5 @@
             <small>&copy; Todos los Derechos Reservados</small></p>
         </div>
     </footer>
+
 </html>
