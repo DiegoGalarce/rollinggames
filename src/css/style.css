@@ -1,0 +1,25 @@
+.azul1{
+   background-color: #19405b; 
+}
+.azul2{
+    background-color: #337CA6;
+}
+.verde{
+    background-color: #171D21;
+}
+.fondo{
+    background: rgb(23,29,33);
+    background: linear-gradient(180deg, rgba(23,29,33,1) 0%, rgba(25,64,91,1) 100%);
+}
+.gradientevioleta{
+    background: rgb(90,20,128);
+    background: linear-gradient(0deg, rgba(90,20,128,1) 0%, rgba(180,39,255,1) 100%);
+
+}
+.margensup{
+    margin-top: 116px;
+}
+.botonredondeado {
+
+    border-radius: 2000px;
+}
