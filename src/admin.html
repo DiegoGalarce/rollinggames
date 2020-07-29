@@ -49,7 +49,7 @@
                     <h3 class="text-center">Tabla de productos</h3>
                 </div>
                 <div class="col-2 text-light">
-                    <button class="btn btn-dark" data-toggle="modal" data-target="#modal">Nuevo</button>
+                    <button class="btn btn-dark" data-toggle="modal" data-target="#modal">Agregar</button>
                 </div>
             </article>
             <article>
@@ -84,6 +84,68 @@
             </article>
         </section>
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-dark">
+                    <form onsubmit="decidir(event);" id="formulario">
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Codigo</label>
+                            <input type="number" class="form-control" id="codigo" placeholder="Ingrese un codigo"
+                                required>
+                            <div class="invalid-feedback">
+                                Debe ingresar un codigo
+                            </div>
+                            <div class="valid-feedback">
+                                Codigo correcto
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Nombre</label>
+                            <input type="text" class="form-control" id="nombre"
+                                placeholder="Mario Bros" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar un Nombre
+                            </div>
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Categoria</label>
+                            <input type="text" class="form-control" id="numSerie" placeholder="2593" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoria
+                            </div>
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion"
+                                placeholder="Ingrese una Descripcion" required>
+                            <div class="invalid-feedback">
+                                Debe ingresar una descripcion
+                            </div>
+                            <div class="valid-feedback">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+                <div class="modal-footer bg-dark">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="bg-dark text-light text-center py-4">
         <p>&copy; Todos los derechos reservados </p>
     </footer>
