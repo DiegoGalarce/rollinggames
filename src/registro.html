@@ -30,7 +30,6 @@
               <a class="nav-link" href="#">Login</a>
             </li>
             <li class="nav-item mr-5">
-              <a class="nav-link" href="#">Registrarse</a>
             </li>
           </ul>
           <form class="form-inline">
@@ -45,27 +44,92 @@
   </header>
   <section class="fondo container-fluid margensup">
     <article class="container">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h1 class="text-light text-center display-5">Rolling Games</h1>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <article class="card-header my-4">
+        <h2 class="text-center display-5 text-light bg-dark rounded-pill p-3 mb-2">CREA UNA CUENTA</h2>
+        <h6 class="pl-3 text-light">Todos los campos marcados son obligatorios. 
+        </h6>
+
+        <div>
+          <div class="container">
+            <form onsubmit="validarGeneral(event)" class="shadow p-3 mb-5 rounded row">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group text-light">
+                  <label>Nombre</label>
+                  <input class="form-control" type="text" placeholder="Julio Cesar" id="nombre"
+                    onblur="revisar(this)">
+                  <div class="invalid-feedback">Debe de ingresar un Nombre</div>
+                  <div class="valid-feedback">Ingreso correctamente sus datos</div>
+                </div>
+                <div class="form-group text-light">
+                  <label>Usuario</label>
+                  <input class="form-control" type="text" placeholder="Maximo20" id="nombre"
+                    onblur="revisar(this)">
+                  <div class="invalid-feedback">Debe de ingresar un Usuario</div>
+                  <div class="valid-feedback">Ingreso correctamente sus datos</div>
+                </div>
+                <div class="form-group text-light">
+                  <label>Email</label>
+                  <input class="form-control" type="email" placeholder="Tucorreo@ejemplo.com" id="email"
+                    onblur="validarEmail(this)">
+                  <div class="invalid-feedback">Ingrese un Email invalido</div>
+                  <div class="valid-feedback">
+                    Ingreso correctamente su Email
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="terminos">
+                      <label class="form-check-label text-light">
+                        Acepto las Condiciones de uso y la Política de privacidad.
+                      </label>
+                  </div>
+                  <div class="invalid-feedback">
+                      Para terminar debe Aceptar Terminos y Condiciones.
+                  </div>
+                  <div class="valid-feedback">
+                      Usted Ingreso correcto su mail
+                  </div>
+              </div>
+                <button type="submit" class="btn btn-primary">
+                  Enviar
+                </button>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group text-light">
+                  <label>Apellido</label>
+                  <input class="form-control" type="text" placeholder="Juan Gonzalez" id="nombre"
+                    onblur="revisar(this)">
+                  <div class="invalid-feedback">Debe de ingresar un Apellido</div>
+                  <div class="valid-feedback">Ingreso correctamente sus datos</div>
+                </div>
+                <div class="form-group text-light">
+                  <label>Contraseña</label>
+                  <input class="form-control" type="text" placeholder="Juan Gonzalez" id="nombre"
+                    onblur="revisar(this)">
+                  <div class="invalid-feedback">Debe de ingresar un Dato para su registro</div>
+                  <div class="valid-feedback">Ingreso correctamente sus datos</div>
+                </div>
+                <div class="form-group">
+                  <label>telefono</label>
+                  <input type="number" class="form-control" id="telefono" placeholder="3816406308"
+                      onblur="validarNumeros(this)">
+                  <div class="invalid-feedback">
+                      Debe ingresar Numeros
+                  </div>
+                  <div class="valid-feedback">
+                      Ud. Ingreso Correctamente
+                  </div>
+              </div>
+              </div>
+            </form>
+
+            <div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">
+              A simple primary alert—check it out!
+            </div>
+          </div>
+        </div>
+      </article>
+
     </article>
   </section>
   <footer class="verde text-center py-4">
@@ -99,7 +163,7 @@
           </p>
           <div class="my-2 text-white d-flex flex-wrap justify-content-center">
             <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
-                  class="fab fa-facebook-square fa-2x mr-2 text-light "></i></a>
+                  class="fab fa-facebook-square fa-2x mr-2 text-light"></i></a>
               /RollingGames</div>
             <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
                   class="fab fa-twitter-square fa-2x mx-2 text-light"></i></a>
