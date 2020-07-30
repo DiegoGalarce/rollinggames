@@ -13,6 +13,15 @@ function revisar(elemento) {
         return true;
     }
 }
+function revisarApellido(elemento) {
+    if (elemento.value == "") {
+        elemento.className = "form-control is-invalid"
+        return false;
+    } else {
+        elemento.className = "form-control is-valid"
+        return true;
+    }
+}
 function validarEmail(input) {
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (input.value != "" && expresion.test(input.value)) {
@@ -23,8 +32,17 @@ function validarEmail(input) {
         return false;
     }
 }
+function validarUsuario(input) {
+    let expresion = /\w+@\w+\.[a-z]{2,}$/;
+    if (input.value != "" && expresion.test(input.value)) {
+        input.className = "form-control is-valid";
+        return true;
+    } else {
+        input.className = "form-control is-invalid"
+        return false;
+    }
+}
 function validarNumeros(input) {
-    // el operador ! cuando es verdadero me duelve falso
     if (input.value != "" && !isNaN(input.value)) {
         input.className = "form-control is-valid";
         return true;
@@ -33,7 +51,7 @@ function validarNumeros(input) {
         return false;
     }
 }
-function validarConsulta(texto) {
+function validarContraseña(input) {
     if (texto.value != "" && texto.value.length >= 10) {
         texto.className = "form-control is-valid";
         return true;
@@ -42,10 +60,25 @@ function validarConsulta(texto) {
         return false;
     }
 }
+let checkTerminos = document.getElementById("terminos");
+function validarCheckbox() {
+    if (checkTerminos.checked) {
+        checkTerminos.className = "form-check-input is-valid";
+        return true;
+    } else {
+        checkTerminos.className = "form-check-input is-invalid";
+        return false;
+    }
+}
+checkTerminos.addEventListener("change", validarCheckbox);
+
 function validarGeneral(event) {
     event.preventDefault();
-    if (revisar(document.getElementById("nombre")) && validarEmail(document.getElementById("email")) &&
-        validarConsulta(document.getElementById("consulta"))
+    if (revisar(document.getElementById("nombre")) && revisarApellido(document.getElementById("apellido")) &&
+        validarEmail(document.getElementById("email")) &&
+        validarNumeros(document.getElementById("telefono")) &&
+        validarUsuario(document.getElementById("usuario")) &&
+        validarContraseña(document.getElementById("contraseña"))
     ) {
         enviarEmail();
 
@@ -56,7 +89,7 @@ function validarGeneral(event) {
 function enviarEmail() {
     let template_params = {
         "from_name": document.getElementById("nombre").value,
-        "message_html": `Mensaje: ${document.getElementById("consulta").value} - Email ${document.getElementById("email").value}`
+        "message_html": `Mensaje: ${document.getElementById("usuari").value} - Email ${document.getElementById("email").value} - Contraseña ${document.getElementById("contraseña")}`
     }
 
     let service_id = "default_service";
