@@ -26,9 +26,25 @@
      margin-top: 116px;
  }
  .botonredondeado {
- 
      border-radius: 200px;
  }
+
+ .botonerror{
+    border-radius: 20px;
+ }
+
+.error{
+    font-family: 'Slabo 27px', serif;
+    text-shadow: 
+    0 0 5px #7BACFF,
+    0 0 10px #7BACFF,
+    0 0 20px #7BACFF,
+    0 0 40px #7BACFF,
+    0 0 80px #7BACFF,
+    0 0 90px #7BACFF,
+    0 0 100px #7BACFF,
+    0 0 150px #7BACFF;
+}
 
 #tablaProductos{
     background-color: whitesmoke;
