@@ -22,7 +22,7 @@
     background: linear-gradient(0deg, rgba(90,20,128,1) 0%, rgba(180,39,255,1) 100%);
 }
 .margensup{
-    margin-top: 116px;
+    margin-top: 80px;
 }
 .botonredondeado {
     border-radius: 200px;
@@ -35,4 +35,7 @@
 .sombraform{
   box-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
-
+.gradienteHorizontal{
+    background: rgb(180,39,255);
+    background: linear-gradient(90deg, rgba(180,39,255,1) 0%, rgba(23,29,33,1) 100%);
+}
