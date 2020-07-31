@@ -4,7 +4,7 @@ import '../css/style.css';
 import '@fortawesome/fontawesome-free/js/all.min.js';
 
 
-function revisar(elemento) {
+window.revisar = function(elemento) {
     if (elemento.value == "") {
         elemento.className = "form-control is-invalid"
         return false;
@@ -13,7 +13,7 @@ function revisar(elemento) {
         return true;
     }
 }
-function revisarApellido(elemento) {
+ window.revisarApellido = function(elemento) {
     if (elemento.value == "") {
         elemento.className = "form-control is-invalid"
         return false;
@@ -22,7 +22,7 @@ function revisarApellido(elemento) {
         return true;
     }
 }
-function validarEmail(input) {
+window.validarEmail = function (input) {
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (input.value != "" && expresion.test(input.value)) {
         input.className = "form-control is-valid";
@@ -32,8 +32,8 @@ function validarEmail(input) {
         return false;
     }
 }
-function validarUsuario(input) {
-    let expresion = /\w+@\w+\.[a-z]{2,}$/;
+window.validarUsuario = function (input) {
+    let expresion = /^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/;
     if (input.value != "" && expresion.test(input.value)) {
         input.className = "form-control is-valid";
         return true;
@@ -42,7 +42,7 @@ function validarUsuario(input) {
         return false;
     }
 }
-function validarNumeros(input) {
+window.validarNumeros = function (input) {
     if (input.value != "" && !isNaN(input.value)) {
         input.className = "form-control is-valid";
         return true;
@@ -51,17 +51,18 @@ function validarNumeros(input) {
         return false;
     }
 }
-function validarContraseña(input) {
-    if (texto.value != "" && texto.value.length >= 10) {
-        texto.className = "form-control is-valid";
+window.revisarContraseña = function (input) {
+    let expresion = /^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/;
+    if (input.value != "" && expresion.test(input.value)) {
+        input.className = "form-control is-valid";
         return true;
     } else {
-        texto.className = "form-control is-invalid";
+        input.className = "form-control is-invalid"
         return false;
     }
 }
 let checkTerminos = document.getElementById("terminos");
-function validarCheckbox() {
+window.validarCheckbox = function () {
     if (checkTerminos.checked) {
         checkTerminos.className = "form-check-input is-valid";
         return true;
@@ -72,13 +73,13 @@ function validarCheckbox() {
 }
 checkTerminos.addEventListener("change", validarCheckbox);
 
-function validarGeneral(event) {
+window.validarGemeral = function (event) {
     event.preventDefault();
     if (revisar(document.getElementById("nombre")) && revisarApellido(document.getElementById("apellido")) &&
         validarEmail(document.getElementById("email")) &&
         validarNumeros(document.getElementById("telefono")) &&
         validarUsuario(document.getElementById("usuario")) &&
-        validarContraseña(document.getElementById("contraseña"))
+        revisarContraseña(document.getElementById("contraseña"))
     ) {
         enviarEmail();
 
