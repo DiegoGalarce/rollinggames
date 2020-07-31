@@ -50,13 +50,13 @@
   </header>
   <section class="fondo container-fluid margensup">
     <article class="card-header">
-      <h2 class="text-center display-5 text-light  rounded-pill p-3 mb-2">CREA UNA CUENTA</h2>
+      <h2 class="text-center display-5 text-light  rounded-pill p-3 mb-2">CREAR UNA CUENTA</h2>
       <h6 class="text-center pl-3 text-light">Todos los campos marcados son obligatorios.
       </h6>
 
       <div>
         <div class="container">
-          <form onsubmit="validarGeneral(event)" class="shadow p-3 mb-5 rounded row">
+          <form onsubmit="validarGeneral(event)" id="formulario" class="shadow p-3 mb-5 rounded row">
             <div class="col-sm-12 col-md-6 col-lg-6">
               <div class="form-group text-light">
                 <label>Nombre</label>
@@ -66,7 +66,7 @@
               </div>
               <div class="form-group text-light">
                 <label>Apellido</label>
-                <input class="form-control" type="text" placeholder="Juan Gonzalez" id="apellido" onblur="revisarApellido(this)">
+                <input class="form-control" type="text" placeholder="Gonzalez" id="apellido" onblur="revisarApellido(this)">
                 <div class="invalid-feedback">Debe de ingresar un Apellido</div>
                 <div class="valid-feedback">Ingreso correctamente sus datos</div>
               </div>
@@ -84,19 +84,19 @@
             <div class="col-sm-12 col-md-6 col-lg-6">
               <div class="form-group text-light">
                 <label>Usuario</label>
-                <input class="form-control" type="text" placeholder="Maximo20" id="usuario" onblur="validarUsuario(this)">
-                <div class="invalid-feedback">Debe de ingresar un Usuario</div>
+                <input class="form-control" type="text" placeholder="Maximo2020" id="usuario" onblur="validarUsuario(this)">
+                <div class="invalid-feedback">Debe de ingresar un Usuario alfanumérico</div>
                 <div class="valid-feedback">Ingreso correctamente sus datos</div>
               </div>
  
               <div class="form-group text-light">
                 <label>Contraseña</label>
-                <input class="form-control" type="text" placeholder="Juan Gonzalez" id="contraseña" onblur="revisarContraseña(this)">
+                <input class="form-control" type="text" placeholder="Minimo 6 carateres alfanuméricos" id="contraseña" onblur="revisarContraseña(this)">
                 <div class="invalid-feedback">Debe de ingresar un Dato</div>
                 <div class="valid-feedback">Ingreso correctamente sus datos</div>
               </div>
-              <div class="form-group">
-                <label>telefono</label>
+              <div class="form-group text-light">
+                <label>Teléfono</label>
                 <input type="number" class="form-control" id="telefono" placeholder="3816406308"
                     onblur="validarNumeros(this)">
                 <div class="invalid-feedback">
@@ -107,6 +107,9 @@
                 </div>
             </div>
             </div>
+            <button type="submit" class="btn btn-primary" onclick="limpiarFormulario()" value="Enviar">
+              Enviar
+            </button>
 
           </form>
           <div class="form-group">
@@ -123,9 +126,7 @@
               Usted Ingreso correcto su mail
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">
-            Enviar
-          </button>
+
 
           <div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">
             A simple primary alert—check it out!

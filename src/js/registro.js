@@ -87,23 +87,14 @@ window.validarGemeral = function (event) {
         alert("Se produjo un Error en el Envio")
     }
 }
-function enviarEmail() {
-    let template_params = {
-        "from_name": document.getElementById("nombre").value,
-        "message_html": `Mensaje: ${document.getElementById("usuari").value} - Email ${document.getElementById("email").value} - Contraseña ${document.getElementById("contraseña")}`
-    }
-
-    let service_id = "default_service";
-    let template_id = "template_sEfoCHH2";
-    emailjs.send(service_id, template_id, template_params).then(
-        function (response) {
-            console.log("Respuesta se envio" + response);
-            document.getElementById("msjEnvio").className = "alert alert-warning my-4";
-            document.getElementById("msjEnvio").innerText = "Su respuesta fue enviada"
-        }, function (error) {
-            console.log("Se produjo un error" + error);
-            document.getElementById("msjEnvio").className = "alert alert-Danger my-4";
-            document.getElementById("msjEnvio").innerText = "Ocurrio un Error en el Envio"
-        }
-    )
+window.limpiarFormulario = function () {
+    if (confirm('¿Estas seguro de enviar este formulario?')){
+        document.tuformulario.submit()
+ }
+	document.getElementById('formulario').reset;
 }
+window.enviarEmail = function() {
+     if (confirm('¿Estas seguro de enviar este formulario?')){
+           document.tuformulario.submit()
+    }
+} 
