@@ -84,7 +84,6 @@ function enviarEmail() {
     let template_id = "template_ATUE1tUl";
     emailjs.send(service_id, template_id, template_params).then(
         function (response) {
-            console.log("envio correctamente" + response.status);
             document.getElementById(`msjEnvio`).className = "alert alert-primary my-4";
             document.getElementById(`msjEnvio`).innerText = "Su Consulta fue enviada correctamente";
         }, function (error) {
