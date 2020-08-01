@@ -1,13 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css'
+import Juego from './juego.js'
 import '@fortawesome/fontawesome-free/js/all.min.js'
 
-console.log("si funciona admin");
-
 let listaProductos = [];
+leerProductos();
 
-window.agregarproducto = function agregarproducto() {
+let juegoExistente = false;
+
+window.agregarProducto = function agregarProducto() {
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
@@ -21,8 +23,11 @@ window.agregarproducto = function agregarproducto() {
     localStorage.setItem('juegoKey', JSON.stringify(listaProductos));
 
     //mostrar arreglo
-
+    leerProductos();
+    limpiarFormulario();
     //Cerrar ventana modal
+    let ventanaModal = document.getElementById('modal');
+    $(ventanaModal).modal('hide');
 };
 
 function leerProductos() {
@@ -35,10 +40,11 @@ function leerProductos() {
         //borrar filas de la tabla
         borrarFilas();
         //dibujar filas
+        dibujarFilas(arregloJuego);
     }
 }
 
-function dibujarFila() {
+function dibujarFilas(arregloJuego) {
     let tabla = document.getElementById('tablaProductos');
     for (let i in arregloJuego) {
         let codHTML = `<tr>
@@ -47,12 +53,12 @@ function dibujarFila() {
     <td>${arregloJuego[i].categoria}</td>
     <td>${arregloJuego[i].descripcion}</td>
     <td>
-        <button class="btn btn-outline-success"><i class="far fa-check-square"></i></button>
+        <button class="btn btn-outline-success"><i class="far fa-check-square" onclick="juegoPublicado(${arregloJuego[i].codigo})></i></button>
     </td>
     <td>
-        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-        <button class="btn btn-primary"><i class="far fa-edit"></i></button>
-        <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+        <button class="btn btn-danger"><i class="fas fa-trash-alt" onclick="eliminarJuego(${arregloJuego[i].codigo})></i></button>
+        <button class="btn btn-primary"><i class="far fa-edit" onclick="prepararJuego(${arregloJuego[i].codigo})></i></button>
+        <button class="btn btn-outline-warning"><i class="far fa-star" onclick="seleccionarJuego(${arregloJuego[i].codigo})></i></button>
     </td>
 </tr>`
 
@@ -69,3 +75,66 @@ function borrarFilas() {
     }
 }
 
+window.limpiarFormulario = function () {
+    let formulario = document.getElementById('formulario');
+    formulario.reset();
+    juegoExistente = false;
+}
+
+window.eliminarJuego = function (codigo) {
+    let arregloFiltrado = listaProductos.filter(function (juego) {
+        return juego.codigo != codigo;
+    });
+    localStorage.setItem("juegoKey", JSON.stringify(arregloFiltrado))
+    listaProductos = arregloFiltrado;
+
+    leerProductos();
+}
+
+window.prepararJuego = function (codigo) {
+    console.log(codigo);
+    let juegoEncontrado = listaProductos.find(function (producto) {
+        return producto.codigo == codigo;
+    })
+    document.getElementById('codigo').value = juegoEncontrado.codigo;
+    document.getElementById('nombre').value = juegoEncontrado.nombre;
+    document.getElementById('categoria').value = juegoEncontrado.categoria;
+    document.getElementById('descripcion').value = juegoEncontrado.descripcion;
+
+    let ventanaModal = document.getElementById('modal');
+
+    $(ventanaModal).modal('show');
+
+    juegoExistente = true;
+}
+
+window.decidir = function (event) {
+    event.preventDefault();
+    if (juegoExistente == false) {
+        agregarProducto();
+    } else {
+        modificarProducto();
+    }
+}
+
+function modificarProducto() {
+
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.getElementById('nombre').value;
+    let categoria = document.getElementById('categoria').value;
+    let descripcion = document.getElementById('descripcion').value;
+
+    for (let i in listaProductos) {
+        if (listaProductos[i].codigo == codigo) {
+            listaProductos[i].nombre = nombre;
+            listaProductos[i].categoria = categoria;
+            listaProductos[i].descripcion = descripcion;
+        }
+    }
+
+    localStorage.setItem("juegoKey", JSON.stringify(listaProductos))
+    leerProductos();
+    limpiarFormulario();
+
+    let ventanaModal = document.getElementById('modal');
+}
