@@ -5,11 +5,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
+<<<<<<< HEAD
     index: './src/js/index.js',
     admin: './src/js/admin.js',
     contacto: './src/js/contacto.js'
   },
 
+=======
+      index: './src/js/index.js',
+      admin: './src/js/admin.js',
+      registro: './src/js/registro.js'},
+>>>>>>> paginaRegistro
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -120,6 +126,7 @@ module.exports = {
       filename: './nosotros.html'
     }),
     new HtmlWebpackPlugin({
+<<<<<<< HEAD
       template: './src/registro.html',
       minify: {
         collapseWhitespace: true,
@@ -132,6 +139,20 @@ module.exports = {
       inject: true,
       chunks: ['admin'],
       filename: './registro.html'
+=======
+        template: './src/registro.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['registro'],
+        filename: './registro.html'
+>>>>>>> paginaRegistro
     }),
     new HtmlWebpackPlugin({
       template: './src/detallejuego.html',
