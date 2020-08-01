@@ -4,7 +4,7 @@ import '../css/style.css';
 import '@fortawesome/fontawesome-free/js/all.min.js';
 
 
-window.revisar = function(elemento) {
+window.revisar = function (elemento) {
     if (elemento.value == "") {
         elemento.className = "form-control is-invalid"
         return false;
@@ -13,7 +13,7 @@ window.revisar = function(elemento) {
         return true;
     }
 }
- window.revisarApellido = function(elemento) {
+window.revisarApellido = function (elemento) {
     if (elemento.value == "") {
         elemento.className = "form-control is-invalid"
         return false;
@@ -73,28 +73,40 @@ window.validarCheckbox = function () {
 }
 checkTerminos.addEventListener("change", validarCheckbox);
 
-window.validarGemeral = function (event) {
+window.validarGeneral = function (e) {
+
     event.preventDefault();
+
     if (revisar(document.getElementById("nombre")) && revisarApellido(document.getElementById("apellido")) &&
         validarEmail(document.getElementById("email")) &&
         validarNumeros(document.getElementById("telefono")) &&
         validarUsuario(document.getElementById("usuario")) &&
-        revisarContraseña(document.getElementById("contraseña"))
+        revisarContraseña(document.getElementById("contraseña")) &&
+        validarCheckbox()
+
     ) {
         enviarEmail();
 
     } else {
-        alert("Se produjo un Error en el Envio")
     }
 }
-window.limpiarFormulario = function () {
-    if (confirm('¿Estas seguro de enviar este formulario?')){
-        document.tuformulario.submit()
- }
-	document.getElementById('formulario').reset;
-}
-window.enviarEmail = function() {
-     if (confirm('¿Estas seguro de enviar este formulario?')){
-           document.tuformulario.submit()
+function enviarEmail() {
+    let template_params = {
+        "from_name": document.getElementById("nombre").value,
+        "message_html": `Crear Cuenta: ${document.getElementById("apellido").value} - Email ${document.getElementById("email").value} - Telefono ${document.getElementById("telefono").value} - Usuario ${document.getElementById("usuario").value} - Contraseña ${document.getElementById("contraseña").value}`
     }
-} 
+
+    let service_id = "default_service";
+    let template_id = "template_sEfoCHH2";
+    emailjs.send(service_id, template_id, template_params).then(
+        function (response) {
+            console.log("Respuesta se envio" + response);
+            document.getElementById("msjEnvio").className = "alert alert-warning my-4";
+            document.getElementById("msjEnvio").innerText = "La solicitud fue enviada Correctamente"
+        }, function (error) {
+            console.log("Se produjo un error" + error);
+            document.getElementById("msjEnvio").className = "alert alert-Danger my-4";
+            document.getElementById("msjEnvio").innerText = "Ocurrio un Error en el Envio"
+        }
+    )
+}
