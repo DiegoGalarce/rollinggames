@@ -93,11 +93,11 @@ window.validarGeneral = function (e) {
 function enviarEmail() {
     let template_params = {
         "from_name": document.getElementById("nombre").value,
-        "message_html": `Crear Cuenta: ${document.getElementById("apellido").value} - Email ${document.getElementById("email").value} - Telefono ${document.getElementById("telefono").value} - Usuario ${document.getElementById("usuario").value} - Contraseña ${document.getElementById("contraseña").value}`
+        "message_html": `Mensaje: ${document.getElementById("apellido").value} - Email ${document.getElementById("email").value} - Telefono ${document.getElementById("telefono").value} - Usuario ${document.getElementById("usuario").value} - Contraseña ${document.getElementById("contraseña").value}`
     }
 
     let service_id = "default_service";
-    let template_id = "template_sEfoCHH2";
+    let template_id = "template_ATUE1tUl";
     emailjs.send(service_id, template_id, template_params).then(
         function (response) {
             console.log("Respuesta se envio" + response);
