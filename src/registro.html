@@ -47,90 +47,92 @@
     </nav>
   </header>
   <section class="fondo container-fluid margensup2">
-    <h2 class="text-center display-5 text-light  rounded-pill p-3 m-3">CREAR UNA CUENTA</h2>
-    <h6 class="text-center pl-3 text-light">Todos los campos marcados son obligatorios.
-    </h6>
-    <div>
-      <div class="container">
-        <form onsubmit="validarGeneral(event)" id="formulario" class="shadow p-3 mb-5 rounded row">
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="form-group text-light">
-              <label>Nombre</label>
-              <input class="form-control" type="text" placeholder="Julio Cesar" id="nombre" onblur="revisar(this)">
-              <div class="invalid-feedback">Debe de ingresar un Nombre</div>
-              <div class="valid-feedback">Ingreso correctamente sus datos</div>
-            </div>
-            <div class="form-group text-light">
-              <label>Apellido</label>
-              <input class="form-control" type="text" placeholder="Gonzalez" id="apellido"
-                onblur="revisarApellido(this)">
-              <div class="invalid-feedback">Debe de ingresar un Apellido</div>
-              <div class="valid-feedback">Ingreso correctamente sus datos</div>
-            </div>
-            <div class="form-group text-light">
-              <label>Email</label>
-              <input class="form-control" type="email" placeholder="Tucorreo@ejemplo.com" id="email"
-                onblur="validarEmail(this)">
-              <div class="invalid-feedback">Ingreso un Email Invalido</div>
-              <div class="valid-feedback">
-                Ingreso correctamente su Email
+    <section class="card azul1 fondo">
+      <h2 class="text-center display-5 text-light  rounded-pill p-3 mb-5">CREAR UNA CUENTA</h2>
+      <h6 class="text-center pl-3 text-light">Todos los campos marcados son obligatorios.
+      </h6>
+      <div>
+        <div class="container">
+          <form onsubmit="validarGeneral(event)" id="formulario" class="shadow p-3 mb-5 rounded row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group text-light">
+                <label>Nombre</label>
+                <input class="form-control" type="text" placeholder="Julio Cesar" id="nombre" onblur="revisar(this)">
+                <div class="invalid-feedback">Debe de ingresar un Nombre</div>
+                <div class="valid-feedback">Ingreso correctamente sus datos</div>
+              </div>
+              <div class="form-group text-light">
+                <label>Apellido</label>
+                <input class="form-control" type="text" placeholder="Gonzalez" id="apellido"
+                  onblur="revisarApellido(this)">
+                <div class="invalid-feedback">Debe de ingresar un Apellido</div>
+                <div class="valid-feedback">Ingreso correctamente sus datos</div>
+              </div>
+              <div class="form-group text-light">
+                <label>Email</label>
+                <input class="form-control" type="email" placeholder="Tucorreo@ejemplo.com" id="email"
+                  onblur="validarEmail(this)">
+                <div class="invalid-feedback">Ingreso un Email Invalido</div>
+                <div class="valid-feedback">
+                  Ingreso correctamente su Email
+                </div>
               </div>
             </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group text-light">
+                <label>Usuario</label>
+                <input class="form-control" type="text" placeholder="Maximo2020" id="usuario"
+                  onblur="validarUsuario(this)">
+                <div class="invalid-feedback">Debe de ingresar un Usuario alfanumérico</div>
+                <div class="valid-feedback">Ingreso correctamente sus datos</div>
+              </div>
+              <div class="form-group text-light">
+                <label>Contraseña</label>
+                <input class="form-control" type="text" placeholder="Minimo 6 carateres alfanuméricos" id="contraseña"
+                  onblur="revisarContraseña(this)">
+                <div class="invalid-feedback">Debe de ingresar un Dato</div>
+                <div class="valid-feedback">Ingreso correctamente sus datos</div>
+              </div>
+              <div class="form-group text-light">
+                <label>Teléfono</label>
+                <input type="number" class="form-control" id="telefono" placeholder="3816406308"
+                  onblur="validarNumeros(this)">
+                <div class="invalid-feedback">
+                  Debe ingresar Numeros
+                </div>
+                <div class="valid-feedback">
+                  Ud. Ingreso Correctamente
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terminos">
+                  <label class="form-check-label text-light">
+                    Acepto las Condiciones de uso y la Política de privacidad.
+                  </label>
+                </div>
+                <div class="invalid-feedback">
+                  Para terminar debe Aceptar Terminos y Condiciones.
+                </div>
+                <div class="valid-feedback">
+                  Usted Ingreso correcto su mail
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Enviar
+              </button>
+            </div>
+          </form>
+          <div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">
+            A simple primary alert—check it out!
           </div>
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="form-group text-light">
-              <label>Usuario</label>
-              <input class="form-control" type="text" placeholder="Maximo2020" id="usuario"
-                onblur="validarUsuario(this)">
-              <div class="invalid-feedback">Debe de ingresar un Usuario alfanumérico</div>
-              <div class="valid-feedback">Ingreso correctamente sus datos</div>
-            </div>
-            <div class="form-group text-light">
-              <label>Contraseña</label>
-              <input class="form-control" type="text" placeholder="Minimo 6 carateres alfanuméricos" id="contraseña"
-                onblur="revisarContraseña(this)">
-              <div class="invalid-feedback">Debe de ingresar un Dato</div>
-              <div class="valid-feedback">Ingreso correctamente sus datos</div>
-            </div>
-            <div class="form-group text-light">
-              <label>Teléfono</label>
-              <input type="number" class="form-control" id="telefono" placeholder="3816406308"
-                onblur="validarNumeros(this)">
-              <div class="invalid-feedback">
-                Debe ingresar Numeros
-              </div>
-              <div class="valid-feedback">
-                Ud. Ingreso Correctamente
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="terminos">
-                <label class="form-check-label text-light">
-                  Acepto las Condiciones de uso y la Política de privacidad.
-                </label>
-              </div>
-              <div class="invalid-feedback">
-                Para terminar debe Aceptar Terminos y Condiciones.
-              </div>
-              <div class="valid-feedback">
-                Usted Ingreso correcto su mail
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Enviar
-            </button>
-          </div>
-        </form>
-        <div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">
-          A simple primary alert—check it out!
         </div>
       </div>
-    </div>
+    </section>
   </section>
-  <footer class="verde text-center py-4">
+  <footer class="verde text-center">
     <article class="container">
       <div class="row d-flex justify-content-center">
         <button class="btn btn-lg btn-block botonredondeado gradientevioleta col-sm-12 col-lg-6">
