@@ -53,11 +53,11 @@ function dibujarFilas(arregloJuego) {
     <td>${arregloJuego[i].categoria}</td>
     <td>${arregloJuego[i].descripcion}</td>
     <td>
-        <button class="btn btn-outline-success"><i class="far fa-check-square" onclick="juegoPublicado(${arregloJuego[i].codigo})></i></button>
+        <button class="btn btn-outline-success"><i class="far fa-check-square" onclick="JuegoPublicado(${arregloJuego[i].codigo})></i></button>
     </td>
     <td>
         <button class="btn btn-danger"><i class="fas fa-trash-alt" onclick="eliminarJuego(${arregloJuego[i].codigo})></i></button>
-        <button class="btn btn-primary"><i class="far fa-edit" onclick="prepararJuego(${arregloJuego[i].codigo})></i></button>
+        <button class="btn btn-primary"><i class="far fa-edit" onclick="modificarProducto(${arregloJuego[i].codigo})></i></button>
         <button class="btn btn-outline-warning"><i class="far fa-star" onclick="seleccionarJuego(${arregloJuego[i].codigo})></i></button>
     </td>
 </tr>`
@@ -137,4 +137,5 @@ function modificarProducto() {
     limpiarFormulario();
 
     let ventanaModal = document.getElementById('modal');
+    $(ventanaModal).modal('hide');
 }
