@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../css/style.css'
 import Juego from './juego.js'
+import $ from 'jquery'
 import '@fortawesome/fontawesome-free/js/all.min.js'
 
 let listaProductos = [];
@@ -90,9 +91,9 @@ window.eliminarJuego = function (codigo) {
 
     leerProductos();
 }
-
+    
 window.prepararJuego = function (codigo) {
-    console.log(codigo);
+    
     let juegoEncontrado = listaProductos.find(function (producto) {
         return producto.codigo == codigo;
     })
@@ -102,7 +103,6 @@ window.prepararJuego = function (codigo) {
     document.getElementById('descripcion').value = juegoEncontrado.descripcion;
 
     let ventanaModal = document.getElementById('modal');
-
     $(ventanaModal).modal('show');
 
     juegoExistente = true;
@@ -118,12 +118,11 @@ window.decidir = function (event) {
 }
 
 function modificarProducto() {
-
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
-
+    
     for (let i in listaProductos) {
         if (listaProductos[i].codigo == codigo) {
             listaProductos[i].nombre = nombre;
@@ -131,11 +130,12 @@ function modificarProducto() {
             listaProductos[i].descripcion = descripcion;
         }
     }
-
+    
     localStorage.setItem("juegoKey", JSON.stringify(listaProductos))
     leerProductos();
     limpiarFormulario();
-
+    
     let ventanaModal = document.getElementById('modal');
     $(ventanaModal).modal('hide');
 }
+
