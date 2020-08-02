@@ -1,43 +1,144 @@
 .azul1{
-    background-color: #19405b; 
-}
-.azul2{
-     background-color: #337CA6;
-}
-.verde{
+     background-color: #19405b; 
+ }
+ .azul2{
+      background-color: #337CA6;
+ }
+ .verde{
+      background-color: #171D21;
+ }
+ .fondo{
+      background: rgb(23,29,33);
+      background: linear-gradient(180deg, rgba(23,29,33,1) 0%, rgba(25,64,91,1) 100%);
+ }
+ .gradientevioleta{
+      background: rgb(90,20,128);
+      background: linear-gradient(0deg, rgba(90,20,128,1) 0%, rgba(180,39,255,1) 100%);
+ }
+ .margensup{
+      margin-top: 80px;
+ }
+ .botonredondeado {
+      border-radius: 200px;
+ }
+  
+ .fondocard{
+      padding: 20px;
+      border-radius: 20px;
+ }
+ .sombraform{
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
+ }
+ .gradienteHorizontal{
+      background: rgb(180,39,255);
+      background: linear-gradient(90deg, rgba(180,39,255,1) 0%, rgba(23,29,33,1) 100%);
+ }
+ 
+ .margensupregistro{
+     margin-top: 66px;
+ }
+ .botonredondeadoregistro {
+  
+      border-radius: 200px;
+ }
+
+ .navbar{
+     padding: 0 0;
+ }
+ .titulo{
+     font-family: 'Lato', sans-serif;
+     color: white;
+ }
+ 
+ body{
+     font-family: 'Roboto', sans-serif;
      background-color: #171D21;
-}
-.fondo{
-     background: rgb(23,29,33);
-     background: linear-gradient(180deg, rgba(23,29,33,1) 0%, rgba(25,64,91,1) 100%);
-}
-.gradientevioleta{
+ 
+ }
+ 
+ nav{
+     background-color: #19405B;
+ }
+ 
+ .caja{
+     background: rgb(180,39,255);
+     background: linear-gradient(180deg, rgba(180,39,255,1) 0%, rgba(23,29,33,1) 100%);
+     border-bottom: #fff;
+     border-left: #fff;
+     color: white;
+ }
+ 
+ main{
+     position: relative;
+     top: 50px;
+ }
+ 
+ #lista-categorias{
+     list-style: none;
+ }
+ 
+ .botonCategoria{
      background: rgb(90,20,128);
      background: linear-gradient(0deg, rgba(90,20,128,1) 0%, rgba(180,39,255,1) 100%);
-}
-.margensup{
-     margin-top: 80px;
-}
-.botonredondeado {
+     color: white;
+     border-top: rgba(180,39,255,1);
+     border-bottom: rgba(90,20,128,1);
+     width: 150px;
      border-radius: 200px;
-}
+ }
+ .tituloCategoria{
+     background: rgb(90,20,128);
+     background: linear-gradient(0deg, rgba(90,20,128,1) 0%, rgba(180,39,255,1) 100%);
+     color: white;
+     width: 300px;
+     border-radius: 15px;
+     padding: 5px;
+ }
  
-.fondocard{
-     padding: 20px;
-     border-radius: 40px;
-}
-.sombraform{
-   box-shadow: 5px 5px 20px rgb(0, 0, 0);
-}
-.gradienteHorizontal{
-     background: rgb(180,39,255);
-     background: linear-gradient(90deg, rgba(180,39,255,1) 0%, rgba(23,29,33,1) 100%);
-}
-
-.margensupregistro{
-    margin-top: 66px;
-}
-.botonredondeadoregistro {
+ .cajaCategoria{
+     background: rgb(25,64,91);
+     background: linear-gradient(0deg, rgba(25,64,91,1) 0%, rgba(51,124,166,1) 100%);
+ }
  
-     border-radius: 200px;
-}
+ .borde{
+     border: none;
+ }
+ 
+ /* Celular */
+ 
+ @media all and (max-width: 599px){
+     .card{
+         width: 90%;
+         margin: 0 auto;
+     }
+ }
+ 
+ /* Computadora */
+ 
+ @media all and (min-width: 992px) {
+     .caja{
+         transition: 0.2s;
+     }
+     .caja:hover{
+         transform: scale(1.1,1.1);
+     }
+     .botonCategoria{
+         transition: 0.2s;
+     }
+     .botonCategoria:hover{
+         transform: scale(1.2,1.2);
+         color: white;
+         transition: 0.2s;
+     }
+     #listaCategoria{
+         display: flex;
+         justify-content: space-between;
+     }
+     .juegoInicio{
+         transition: 0.2s;
+     }
+     .juegoInicio:hover{
+         transform: scale(1.1,1.1);
+         transition: 0.2s;
+     }
+ }
