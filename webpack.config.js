@@ -160,6 +160,20 @@ module.exports = {
       chunks: ['admin'],
       filename: './detallejuegodos.html'
   }),
+  new HtmlWebpackPlugin({
+    template: './src/detallejuegotres.html',
+    minify:{
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: true
+    },
+    inject: true,
+    chunks: ['admin'],
+    filename: './detallejuegotres.html'
+}),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
     }),
