@@ -120,18 +120,18 @@ module.exports = {
       filename: './nosotros.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/registro.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['admin'],
-      filename: './registro.html'
+        template: './src/registro.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['registro'],
+        filename: './registro.html'
     }),
     new HtmlWebpackPlugin({
       template: './src/detallejuego.html',
@@ -160,7 +160,5 @@ module.exports = {
       ]
     })
 
-  ],
+],
 };
-
-

@@ -1,35 +1,43 @@
 .azul1{
-   background-color: #19405b; 
+    background-color: #19405b; 
 }
 .azul2{
-    background-color: #337CA6;
+     background-color: #337CA6;
 }
 .verde{
-    background-color: #171D21;
+     background-color: #171D21;
 }
 .fondo{
-    background: rgb(23,29,33);
-    background: linear-gradient(180deg, rgba(23,29,33,1) 0%, rgba(25,64,91,1) 100%);
+     background: rgb(23,29,33);
+     background: linear-gradient(180deg, rgba(23,29,33,1) 0%, rgba(25,64,91,1) 100%);
 }
 .gradientevioleta{
-    background: rgb(90,20,128);
-    background: linear-gradient(0deg, rgba(90,20,128,1) 0%, rgba(180,39,255,1) 100%);
+     background: rgb(90,20,128);
+     background: linear-gradient(0deg, rgba(90,20,128,1) 0%, rgba(180,39,255,1) 100%);
 }
 .margensup{
-    margin-top: 80px;
+     margin-top: 80px;
 }
 .botonredondeado {
-    border-radius: 200px;
+     border-radius: 200px;
 }
-
+ 
 .fondocard{
-    padding: 20px;
-    border-radius: 40px;
+     padding: 20px;
+     border-radius: 40px;
 }
 .sombraform{
-  box-shadow: 5px 5px 20px rgb(0, 0, 0);
+   box-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
 .gradienteHorizontal{
-    background: rgb(180,39,255);
-    background: linear-gradient(90deg, rgba(180,39,255,1) 0%, rgba(23,29,33,1) 100%);
+     background: rgb(180,39,255);
+     background: linear-gradient(90deg, rgba(180,39,255,1) 0%, rgba(23,29,33,1) 100%);
+}
+
+.margensupregistro{
+    margin-top: 66px;
+}
+.botonredondeadoregistro {
+ 
+     border-radius: 200px;
 }
