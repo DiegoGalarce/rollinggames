@@ -4,5 +4,6 @@ export default class Juego{
         this.nombre = nombre;
         this.categoria = categoria;
         this.descripcion = descripcion;
+        this.imagen = imagen;
     }
 }

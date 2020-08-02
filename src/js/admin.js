@@ -15,9 +15,11 @@ window.agregarProducto = function agregarProducto() {
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
+    let imagen = document.getElementById('imagen').value;
+
     //validar general
 
-    let productoNuevo = new Juego(codigo, nombre, categoria, descripcion);
+    let productoNuevo = new Juego(codigo, nombre, categoria, descripcion,imagen);
 
     listaProductos.push(productoNuevo);
 
@@ -53,6 +55,7 @@ function dibujarFilas(arregloJuego) {
     <td>${arregloJuego[i].nombre}</td>
     <td>${arregloJuego[i].categoria}</td>
     <td>${arregloJuego[i].descripcion}</td>
+    <td>${arregloJuego[i].imagen}</td>
     <td>
         <button class="btn botontabla" id="publicado" onclick="marcarPublicado(1)"><i class="fas fa-check" style="color: black;"></i></button>
     </td>
@@ -101,6 +104,7 @@ window.prepararJuego = function (codigo) {
     document.getElementById('nombre').value = juegoEncontrado.nombre;
     document.getElementById('categoria').value = juegoEncontrado.categoria;
     document.getElementById('descripcion').value = juegoEncontrado.descripcion;
+    document.getElementById('imagen').value = juegoEncontrado.imagen;
 
     let ventanaModal = document.getElementById('modal');
     $(ventanaModal).modal('show');
@@ -122,12 +126,14 @@ function modificarProducto() {
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
+    let imagen = document.getElementById('imagen').value;
     
     for (let i in listaProductos) {
         if (listaProductos[i].codigo == codigo) {
             listaProductos[i].nombre = nombre;
             listaProductos[i].categoria = categoria;
             listaProductos[i].descripcion = descripcion;
+            listaProductos[i].imagen = imagen;
         }
     }
     
