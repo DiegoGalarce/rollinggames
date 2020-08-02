@@ -2,14 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+ 
 module.exports = {
   entry: {
-    index: './src/js/index.js',
-    admin: './src/js/admin.js',
-    contacto: './src/js/contacto.js'
-  },
-
+      index: './src/js/index.js',
+      admin: './src/js/admin.js',
+      registro: './src/js/registro.js',
+    contacto: './src/js/contacto.js'},
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -27,97 +26,97 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[ext]',
-            },
+                name: 'img/[name].[ext]',
+             },
           },
         ],
       }
 
     ]
   },
-  plugins: [
+  plugins:[
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['index']
+        template: './src/index.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['index']
     }),
     new HtmlWebpackPlugin({
-      template: './src/admin.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['admin'],
-      filename: './admin.html'
+        template: './src/admin.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['admin'],
+        filename: './admin.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/404.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['admin'],
-      filename: './404.html'
+        template: './src/404.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['admin'],
+        filename: './404.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/contacto.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['contacto'],
-      filename: './contacto.html'
+        template: './src/contacto.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['contacto'],
+        filename: './contacto.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/login.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['admin'],
-      filename: './login.html'
+        template: './src/login.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['admin'],
+        filename: './login.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/nosotros.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['admin'],
-      filename: './nosotros.html'
+        template: './src/nosotros.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['admin'],
+        filename: './nosotros.html'
     }),
     new HtmlWebpackPlugin({
         template: './src/registro.html',
@@ -134,30 +133,30 @@ module.exports = {
         filename: './registro.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/detallejuego.html',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      },
-      inject: true,
-      chunks: ['admin'],
-      filename: './detallejuego.html'
+        template: './src/detallejuego.html',
+        minify:{
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true
+        },
+        inject: true,
+        chunks: ['admin'],
+        filename: './detallejuego.html'
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/style.css'
+        filename: 'css/style.css'
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: './src/img',
-          to: 'img',
-        },
-
-      ]
+        patterns: [
+          {
+            from: './src/img',
+            to: 'img',
+          },
+         
+        ]
     })
 
 ],
