@@ -54,12 +54,12 @@ function dibujarFilas(arregloJuego) {
     <td>${arregloJuego[i].categoria}</td>
     <td>${arregloJuego[i].descripcion}</td>
     <td>
-        <button class="btn btn-outline-success"><i class="far fa-check-square"></i></button>
+        <button class="btn botontabla" id="publicado" onclick="marcarPublicado(1)"><i class="fas fa-check" style="color: black;"></i></button>
     </td>
     <td>
         <button class="btn btn-danger"><i class="fas fa-trash-alt" onclick="eliminarJuego(${arregloJuego[i].codigo})"></i></button>
         <button class="btn btn-primary"><i class="far fa-edit" onclick="prepararJuego(${arregloJuego[i].codigo})"></i></button>
-        <button class="btn btn-outline-warning"><i class="far fa-star"></i></button>
+        <button class="btn botontabla" id="favorito" onclick="marcarFavorito(1)"><i class="far fa-star"></i></button>
     </td>
 </tr>`
 
@@ -139,3 +139,30 @@ function modificarProducto() {
     $(ventanaModal).modal('hide');
 }
 
+let contador = 0;
+
+window.marcarFavorito = function(x){
+    var x;
+    if(x == 1){
+        contador = contador +1;
+    }
+    if(contador == 1){
+        document.getElementById('favorito').style.background="#F3F325"
+    }else if(contador == 2){
+        document.getElementById('favorito').style.background="";
+        contador = 0;
+    }
+}
+
+window.marcarPublicado = function(x){
+    var x;
+    if(x == 1){
+        contador = contador +1;
+    }
+    if(contador == 1){
+        document.getElementById('publicado').style.background="#78C032"
+    }else if(contador == 2){
+        document.getElementById('publicado').style.background="";
+        contador = 0;
+    }
+}
