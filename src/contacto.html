@@ -9,12 +9,12 @@
     <meta name="description" content="Pagina web dedicada a la venta de juegos Indie">
     <meta name="keywords"
         content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function () {
-                emailjs.init("user_zvhEiiAjjIcAoWLmOBWhC");
-            })();
-        </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_zvhEiiAjjIcAoWLmOBWhC");
+        })();
+    </script>
 </head>
 
 <body>
@@ -41,10 +41,15 @@
                         </li>
                     </ul>
                     <form class="form-inline">
-                        <input class="form-control" type="search"  placeholder="Buscar Juego">
-                        <button class="btn my-2 text-white d-none d-sm-block" type="submit"><i
+                        <input class="form-control" type="text" id="buscar" placeholder="Buscar Juego">
+                        <button class="btn my-2 text-white d-none d-sm-block" id="botonBuscar"><i
                                 class="fas fa-search fa-2x"></i>
-                            </button>
+                        </button>
+
+                        <ul class="text-light" id="resultado">
+                        </ul>
+
+
                     </form>
                 </div>
             </div>
