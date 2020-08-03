@@ -1,3 +1,94 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=,initial-scale=1"><title>Rolling Games</title><meta name="author" content="Mauricio G. Castro, Daiana Olmi, Diego Galarce, Luciano Chipolina"><meta name="description" content="Pagina web dedicada a la venta de juegos Indie"><meta name="keywords" content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia"><script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script><script>(function () {
-                emailjs.init("user_zvhEiiAjjIcAoWLmOBWhC");
-            })();</script><link href="css/style.css" rel="stylesheet"></head><body><header><nav class="navbar fixed-top navbar-expand-lg navbar-dark azul1"><div class="container"><a href="index.html"><img src="img/logo/Logo-glow.png" alt="logo rolling games" height="50px"> </a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li><li class="nav-item"><a class="nav-link" href="login.html">Login</a></li><li class="nav-item mr-5"><a class="nav-link" href="registro.html">Registrarse</a></li></ul><form class="form-inline"><input class="form-control" type="search" placeholder="Buscar Juego"> <button class="btn my-2 text-white d-none d-sm-block" type="submit"><i class="fas fa-search fa-2x"></i></button></form></div></div></nav></header><section class="fondo container-fluid margensup"><article class="container"><div class="row d-flex justify-content-center"><section class="fondocard my-5 fondo col-sm-12 col-lg-5 sombraform"><div class="fondocard azul1 mt-2"><h4 class="card-title text-light text-center mt-2">Envianos tu consulta</h4></div><div class="card-body text-light"><form onsubmit="validarTodo(event)"><div class="form-group"><label class="ml-4">Nombre</label> <input class="form-control shadow" id="nombre" placeholder="Gabe Newell" onblur="validarNombre(this)"></div><div class="form-group"><label class="ml-4">Email</label> <input type="email" class="form-control shadow" id="email" placeholder="gabenewell@tumail.com" onblur="validarEmail(this)"></div><div class="form-group"><label class="ml-4">Teléfono</label> <input type="number" class="form-control shadow" id="telefono" placeholder="381 5727 950" onblur="validarNumeros(this)"></div><div class="form-group"><label class="ml-4">Consulta</label> <textarea class="form-control shadow" id="consulta" placeholder="Ingrese su consulta" onblur="validarConsulta(this)"></textarea></div><div class="form-group ml-4"><div class="form-check"><input class="form-check-input" type="checkbox" id="terminos"> <label class="form-check-label text-light">Estoy de acuerdo con los términos y condiciones.</label><div class="invalid-feedback text-light">Para continuar debe aceptar los términos y condiciones</div><div class="valid-feedback"></div></div></div><button class="btn ml-4 botonredondeado gradientevioleta px-5 text-light shadow" type="submit">Enviar</button></form><div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">A simple primary alert—check it out!</div></div></section><div class="mt-5 col-sm-6 d-none d-sm-block d-none d-md-block d-flex align-self-center"><img src="img/contacto/contacto-side.png" alt="imagen de hollow knight"></div></div></article></section><footer class="verde text-center py-4"><article class="container"><div class="row d-flex justify-content-center"><button class="btn btn-lg btn-block botonredondeado gradientevioleta col-sm-12 col-lg-6"><h2 class="text-center display-5 text-light">¿Ya te Registraste?</h2><div class="d-flex flex-wrap justify-content-center"><a href="registro.html"><small class="mr-4 text-decoration-none text-light">Registrarme</small> </a><a href="login.html"><small class="ml-4 text-decoration-none text-light">Iniciar Sesión</small></a></div></button><div class="container text-center"><p class="lead my-4 d-flex flex-wrap justify-content-around"><a href="404.html"><strong class="mx-2 text-decoration-none text-light">Rolling Games</strong> </a><a href="nosotros.html"><strong class="mx-2 text-decoration-none text-light">Acerca de Nosotros</strong> </a><a href="contacto.html"><strong class="mx-2 text-decoration-none text-light">Contacto</strong> </a><a href="404.html"><strong class="mx-2 text-decoration-none text-light">Soporte</strong> </a><a href="404.html"><strong class="mx-2 text-decoration-none text-light">Webs Amigas</strong> </a><a href="404.html"><strong class="mx-2 text-decoration-none text-light">GamePlays</strong></a></p><div class="my-2 text-white d-flex flex-wrap justify-content-center"><div class="d-flex align-items-center"><a href="404.html" target="_blank"><i class="fab fa-facebook-square fa-2x mr-2 text-light"></i></a> /RollingGames</div><div class="d-flex align-items-center"><a href="404.html" target="_blank"><i class="fab fa-twitter-square fa-2x mx-2 text-light"></i></a> /RollingGames</div><div class="d-flex align-items-center"><a href="404.html" target="_blank"><i class="fab fa-instagram-square fa-2x ml-2 text-light"></i></a> @RollingGames</div></div></div></div></article><p class="mt-4 text-light"><small>&copy; Todos los Derechos Reservados</small></p></footer></body></html><script src="js/contacto.js"></script>
+<head><link href="css/style.css" rel="stylesheet"></head>Html Webpack Plugin:<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/html-webpack-plugin/lib/loader.js):
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegoaccionuno.html':
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegoaccionuno.html'
+  Module build failed (from ./node_modules/html-webpack-plugin/lib/loader.js):
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegoaventurauno.html':
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegoaventurauno.html'
+  Module build failed (from ./node_modules/html-webpack-plugin/lib/loader.js):
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegocarrerauno.html':
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegocarrerauno.html'
+  Module build failed (from ./node_modules/html-webpack-plugin/lib/loader.js):
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegoplataformauno.html':
+  Error: ENOENT: no such file or directory, open 'D:\Escritorio\CURSO\proyectogames\src\juegoplataformauno.html'
+  
+  - child-compiler.js:122 
+    [proyectogames]/[html-webpack-plugin]/lib/child-compiler.js:122:18
+  
+  - Compiler.js:343 
+    [proyectogames]/[webpack]/lib/Compiler.js:343:11
+  
+  - Compiler.js:681 
+    [proyectogames]/[webpack]/lib/Compiler.js:681:15
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [proyectogames]/[tapable]/lib/Hook.js:154:20
+  
+  - Compiler.js:678 
+    [proyectogames]/[webpack]/lib/Compiler.js:678:31
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [proyectogames]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1423 
+    [proyectogames]/[webpack]/lib/Compilation.js:1423:35
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [proyectogames]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1414 
+    [proyectogames]/[webpack]/lib/Compilation.js:1414:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [proyectogames]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1409 
+    [proyectogames]/[webpack]/lib/Compilation.js:1409:36
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [proyectogames]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1405 
+    [proyectogames]/[webpack]/lib/Compilation.js:1405:32
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [proyectogames]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1342 Compilation.seal
+    [proyectogames]/[webpack]/lib/Compilation.js:1342:27
+  
+  - Compiler.js:675 
+    [proyectogames]/[webpack]/lib/Compiler.js:675:18
+  
+  - Compilation.js:1261 
+    [proyectogames]/[webpack]/lib/Compilation.js:1261:4
+  
+  
+  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
+    [proyectogames]/[tapable]/lib/Hook.js:154:20
+  
+  - Compilation.js:1253 Compilation.finish
+    [proyectogames]/[webpack]/lib/Compilation.js:1253:28
+  
+  - Compiler.js:672 
+    [proyectogames]/[webpack]/lib/Compiler.js:672:17
+  
+  
+  
+  - Compilation.js:1185 
+    [proyectogames]/[webpack]/lib/Compilation.js:1185:12
+  
+  - Compilation.js:1097 
+    [proyectogames]/[webpack]/lib/Compilation.js:1097:9
+  
+  - task_queues.js:79 processTicksAndRejections
+    internal/process/task_queues.js:79:11
+  
+</pre><script src="js/contacto.js"></script>
