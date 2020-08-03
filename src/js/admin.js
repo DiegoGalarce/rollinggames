@@ -11,26 +11,28 @@ leerProductos();
 let juegoExistente = false;
 
 window.agregarProducto = function agregarProducto() {
+
+    console.log("desde funcion agregar producto")
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
     let imagen = document.getElementById('imagen').value;
 
-    //validar general
-
-    let productoNuevo = new Juego(codigo, nombre, categoria, descripcion,imagen);
+    //validar general de todos los datos
+    let productoNuevo = new Juego(codigo, nombre, categoria, descripcion, imagen)
+    console.log("productoNuevo");
 
     listaProductos.push(productoNuevo);
 
     localStorage.setItem('juegoKey', JSON.stringify(listaProductos));
-
-    //mostrar arreglo
+    //mostrar el arreglo
     leerProductos();
     limpiarFormulario();
-    //Cerrar ventana modal
+    //cerrar ventana modal
     let ventanaModal = document.getElementById('modal');
     $(ventanaModal).modal('hide');
+
 };
 
 function leerProductos() {
@@ -137,7 +139,7 @@ function modificarProducto() {
         }
     }
     
-    localStorage.setItem("juegoKey", JSON.stringify(listaProductos))
+    localStorage.setItem("juegoKey", JSON.stringify(listaProductos));
     leerProductos();
     limpiarFormulario();
     
