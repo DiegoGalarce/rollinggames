@@ -95,39 +95,39 @@ function enviarEmail() {
     )
 }
 //BUSCADOR
-// let productos = [
-//     { nombre: `Platano`, valor: 500 },
-//     { nombre: `Pera`, valor: 500 },
-//     { nombre: `Manzana`, valor: 500 },
-//     { nombre: `Melon`, valor: 500 },
-//     { nombre: `Sandia`, valor: 500 },
-// ]
+let productos = [
+    { nombre: `Platano`, valor: 500 },
+    { nombre: `Pera`, valor: 500 },
+    { nombre: `Manzana`, valor: 500 },
+    { nombre: `Melon`, valor: 500 },
+    { nombre: `Sandia`, valor: 500 },
+]
 
-// let formulario = document.querySelector(`#formulario`);
-// let boton = document.querySelector(`#boton`);
-// let resultado = document.querySelector(`#resultado`);
+let formulario = document.querySelector("formulario");
+let boton = document.querySelector("boton");
+let resultado = document.querySelector("resultado");
 
-// let filtrar = () => {
-//     console.log(formulario.value);
-//     // resultado.innerHTML=``;
+let filtrar = () => {
+    console.log(formulario.value);
+    // resultado.innerHTML=``;
 
-//     let texto = formulario.value.tolowercase();
+    let texto = formulario.value.tolowercase();
 
-//     for (let producto of productos) {
-//         let nombre = producto.nombre.toLocaleLowerCase();
-//         if (nombre.indexOf(texto) !== -1) {
-//             resultado.innerHTML +=
-//                 `<li>${producto.nombre} - valor: ${producto.valor}</li>`
-//         }
-//     }
-//     if(resultado.innerHTML===``){
-//         resultado.innerHTML +=
-//         `<li>Juego no encontrado...</li>`
+    for (let producto of productos) {
+        let nombre = producto.nombre.toLocaleLowerCase();
+        if (nombre.indexOf(texto) !== -1) {
+            resultado.innerHTML +=
+                `<li>${producto.nombre} - valor: ${producto.valor}</li>`
+        }
+    }
+    if (resultado.innerHTML === ``) {
+        resultado.innerHTML +=
+            `<li>Juego no encontrado...</li>`
 
-//     }
-// }
+    }
+}
 
-// boton.addEventListener(`click`, filtrar);
+boton.addEventListener(`click`, filtrar);
 // producto.addEventListener(`kayup`, filtrar);
-// filtrar();
+filtrar();
 
