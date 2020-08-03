@@ -133,7 +133,7 @@ module.exports = {
         filename: './registro.html'
     }),
     new HtmlWebpackPlugin({
-        template: './src/detallejuego.html',
+        template: './src/juegoplataformauno.html',
         minify:{
           collapseWhitespace: true,
           removeComments: true,
@@ -144,10 +144,10 @@ module.exports = {
         },
         inject: true,
         chunks: ['admin'],
-        filename: './detallejuego.html'
+        filename: './juegoplataformauno.html'
     }),
     new HtmlWebpackPlugin({
-      template: './src/detallejuegodos.html',
+      template: './src/juegoaccionuno.html',
       minify:{
         collapseWhitespace: true,
         removeComments: true,
@@ -158,10 +158,10 @@ module.exports = {
       },
       inject: true,
       chunks: ['admin'],
-      filename: './detallejuegodos.html'
+      filename: './juegoaccionuno.html'
   }),
   new HtmlWebpackPlugin({
-    template: './src/detallejuegotres.html',
+    template: './src/juegoaventurauno.html',
     minify:{
       collapseWhitespace: true,
       removeComments: true,
@@ -172,7 +172,21 @@ module.exports = {
     },
     inject: true,
     chunks: ['admin'],
-    filename: './detallejuegotres.html'
+    filename: './juegoaventurauno.html'
+}),
+new HtmlWebpackPlugin({
+  template: './src/juegocarrerauno.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['admin'],
+  filename: './juegocarrerauno.html'
 }),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
