@@ -152,7 +152,7 @@
          transition: 0.2s;
      }
  }
- .tachado {
+.tachado {
     text-decoration: line-through;
 }
 .efecto img:hover{
