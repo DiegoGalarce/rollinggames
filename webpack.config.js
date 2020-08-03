@@ -46,7 +46,8 @@ module.exports = {
           useShortDoctype: true
         },
         inject: true,
-        chunks: ['index']
+        chunks: ['index'],
+        filename: './index.html'
     }),
     new HtmlWebpackPlugin({
         template: './src/admin.html',
