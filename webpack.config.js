@@ -2,13 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
- 
+
 module.exports = {
   entry: {
       index: './src/js/index.js',
       admin: './src/js/admin.js',
       registro: './src/js/registro.js',
-    contacto: './src/js/contacto.js'},
+    contacto: './src/js/contacto.js',
+    login: './src/js/login.js'},
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -101,7 +102,7 @@ module.exports = {
           useShortDoctype: true
         },
         inject: true,
-        chunks: ['admin'],
+        chunks: ['login'],
         filename: './login.html'
     }),
     new HtmlWebpackPlugin({

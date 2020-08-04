@@ -168,16 +168,3 @@ $("#publicado").click(function(){
     $(this).toggleClass(" btn-success");
 });
 
-
-// window.marcarPublicado = function(x){
-//     var x;
-//     if(x == 1){
-//         contador = contador +1;
-//     }
-//     if(contador == 1){
-//         document.getElementById('publicado').style.background="#78C032"
-//     }else if(contador == 2){
-//         document.getElementById('publicado').style.background="";
-//         contador = 0;
-//     }
-// }
