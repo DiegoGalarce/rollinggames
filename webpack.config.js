@@ -188,6 +188,20 @@ new HtmlWebpackPlugin({
   chunks: ['admin'],
   filename: './juegocarrerauno.html'
 }),
+new HtmlWebpackPlugin({
+  template: './src/juegoestrategiauno.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['admin'],
+  filename: './juegoestrategiauno.html'
+}),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
     }),
