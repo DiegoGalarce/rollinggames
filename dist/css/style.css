@@ -170,6 +170,9 @@
 .margensuperiordetalledos{
     margin-top: 66px;
 }
+.botonerror{
+    border-radius: 20px;
+ }
 .error{
     font-family: 'Slabo 27px', serif;
     text-shadow: 
@@ -188,8 +191,7 @@
 }
 
 .botontabla{
-    border-color: #C8C8C5;
-    border-radius: 5px;
+    border-color: black;
 }
 
 h1{
