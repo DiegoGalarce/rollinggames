@@ -9,12 +9,6 @@
     <meta name="description" content="Pagina web dedicada a la venta de juegos Indie">
     <meta name="keywords"
         content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function () {
-                emailjs.init("user_zvhEiiAjjIcAoWLmOBWhC");
-            })();
-        </script>
 </head>
 
 <body>
@@ -43,8 +37,7 @@
                     <form class="form-inline">
                         <input class="form-control" type="search" placeholder="Buscar Juego">
                         <button class="btn my-2 text-white d-none d-sm-block" type="submit"><i
-                                class="fas fa-search fa-2x"></i>
-                            </button>
+                                class="fas fa-search fa-2x"></i></button>
                     </form>
                 </div>
             </div>
@@ -52,58 +45,38 @@
         </nav>
     </header>
     <section class="fondo container-fluid margensup">
-        <article class="container">
-            <div class="row d-flex justify-content-center">
-                <section class="fondocard my-5 ml-5 fondo col-sm-12 col-lg-5 sombraform">
-                    <div class="fondocard azul1 mt-2">
-                        <h4 class="card-title text-light text-center mt-2">Envianos tu consulta</h4>
-                    </div>
-                    <div class="card-body text-light">
-                        <form onsubmit="validarTodo(event)">
-                            <div class="form-group">
-                                <label class="ml-4">Nombre</label>
-                                <input type="text" class="form-control shadow" id="nombre" placeholder="Gabe Newell"
-                                    onblur="validarNombre(this)">
-                            </div>
-                            <div class="form-group">
-                                <label class="ml-4">Email</label>
-                                <input type="email" class="form-control shadow" id="email"
-                                    placeholder="gabenewell@tumail.com" onblur="validarEmail(this)">
-                            </div>
-                            <div class="form-group">
-                                <label class="ml-4">Teléfono</label>
-                                <input type="number" class="form-control shadow" id="telefono"
-                                    placeholder="381 5727 950" onblur="validarNumeros(this)">
-                            </div>
-                            <div class="form-group">
-                                <label class="ml-4">Consulta</label>
-                                <textarea class="form-control shadow" id="consulta" placeholder="Ingrese su consulta"
-                                    onblur="validarConsulta(this)"></textarea>
-                            </div>
-                            <!-- FORM CHECK -->
-                            <div class="form-group ml-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="terminos">
-                                    <label class="form-check-label text-light">
-                                        Estoy de acuerdo con los términos y condiciones.
-                                    </label>
-                                    <div class="invalid-feedback text-light">
-                                        Para continuar debe aceptar los términos y condiciones
-                                    </div>
-                                    <div class="valid-feedback">
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="btn ml-4 botonredondeado gradientevioleta px-5 text-light shadow"
-                                type="submit">Enviar</button>
-                        </form>
-                        <div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">
-                            A simple primary alert—check it out!
-                        </div>
-                    </div>
-                </section>
-                <div class="mt-5 col-sm-6 d-none d-sm-block d-none d-md-block d-flex align-self-center">
-                    <img src="img/contacto/contacto-side.png" alt="imagen de hollow knight">
+        <article class="container text-light text-center pb-5">
+            <div class="my-3">
+                <h1 class="titulo text-center mb-3">Rolling Games</h1>
+                <div class="fondocard gradienteAzul">
+                    <h5 class="card-text text-light text-center lead juegoInicio">ES TIEMPO DE JUGAR!</h5>
+                </div>
+            </div>
+            <div class="row fondocard fondo shadow">
+                <div class="col-sm-12 col-lg-6">
+                    <i class="fas fa-gamepad fa-10x text-light mb-3"></i>
+                    <h5 class="">A lo que jugás</h5>
+                    <p class="text-center">Ofrecemos miles de juegos INDIE en la tienda con ventas todos los días.</p>
+                </div>
+
+                <div class="col-sm-12 col-lg-6">
+                    <i class="fas fa-hand-holding-heart fa-10x text-light mb-3"></i>
+                    <h5 class="">Lo que apoyás </h5>
+                    <p class="text-center">Con cada compra estás apoyando a un estudio de Desarrollo de Software
+                        independiente, para que puedan seguir creciendo y creando los mejores juegos para todos.</p>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <i class="fas fa-robot fa-10x text-light mb-3"></i>
+                    <h5 class="">Cómo vas a juegar </h5>
+                    <p class="text-center">Al comprar un juego multiplataforma, obtienes una versión para cada sistema
+                        operativo disponible.</p>
+                </div>
+
+                <div class="col-sm-12 col-lg-6 mb-5">
+                    <i class="fas fa-cart-arrow-down fa-10x text-light mb-3"></i>
+                    <h5 class="">Cómo comprás</h5>
+                    <p class="text-center">Realiza un pedido con una cuenta. Paga con tarjeta de crédito, PayPal o por
+                        RapiPago/Pago Fácil.</p>
                 </div>
             </div>
         </article>
@@ -123,7 +96,8 @@
                 </button>
                 <div class="container text-center">
                     <p class="lead my-4 d-flex flex-wrap justify-content-around">
-                        <a href="rollinggames.html"> <strong class="mx-2 text-decoration-none text-light">Rolling Games</strong>
+                        <a href="rollinggames.html"> <strong class="mx-2 text-decoration-none text-light">Rolling
+                                Games</strong>
                         </a>
                         <a href="nosotros.html"> <strong class="mx-2 text-decoration-none text-light">Acerca de
                                 Nosotros</strong>

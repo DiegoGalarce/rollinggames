@@ -202,6 +202,20 @@ new HtmlWebpackPlugin({
   chunks: ['admin'],
   filename: './juegoestrategiauno.html'
 }),
+new HtmlWebpackPlugin({
+  template: './src/rollinggames.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['admin'],
+  filename: './rollinggames.html'
+}),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
     }),
