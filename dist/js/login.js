@@ -86,7 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-<<<<<<< HEAD
 /***/ "./node_modules/@fortawesome/fontawesome-free/js/all.min.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@fortawesome/fontawesome-free/js/all.min.js ***!
@@ -198,23 +197,15 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 
 /***/ }),
 
-=======
->>>>>>> buscador
 /***/ "./src/js/login.js":
 /*!*************************!*\
   !*** ./src/js/login.js ***!
   \*************************/
 /*! no exports provided */
-<<<<<<< HEAD
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_css_style_css__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_min_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/all.min.js */ \"./node_modules/@fortawesome/fontawesome-free/js/all.min.js\");\n/* harmony import */ var _fortawesome_fontawesome_free_js_all_min_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_all_min_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\nvar usuario = document.getElementById(\"inputUsuario\");\nvar pass = document.getElementById(\"inputPassword\");\n\nwindow.validarUsuario = function (input) {\n  if (input.value == \"\") {\n    input.className = \"form-control is-invalid w-75\";\n    return false;\n  } else {\n    input.className = \"form-control is-valid w-75\";\n    return true;\n  }\n};\n\nwindow.validarPass = function (input) {\n  if (input.value == \"\") {\n    input.className = \"form-control is-invalid w-75\";\n    return false;\n  } else {\n    input.className = \"form-control is-valid w-75\";\n    return true;\n  }\n};\n\nfunction ingresar() {\n  event.preventDefault();\n\n  if (usuario.value == \"admin\" && pass.value == \"admin\") {\n    window.location.href = \"admin.html\";\n  } else {\n    document.getElementById(\"alertaError\").className = \"alert alert-danger my-4\";\n    document.getElementById(\"alertaError\").innerText = \"El usuario o contraseña es incorrecto. Intente de nuevo.\";\n  }\n}\n\nwindow.validarForm = function () {\n  if (usuario && pass) {\n    ingresar();\n  } else {\n    alert(\"Hay un error.\");\n  }\n};\n\n//# sourceURL=webpack:///./src/js/login.js?");
-=======
-/***/ (function(module, exports) {
-
-eval("throw new Error(\"Module build failed (from ./node_modules/babel-loader/lib/index.js):\\nError: ENOENT: no such file or directory, open '/Users/mauriciog.castro/Desktop/rollinggames/src/js/login.js'\");\n\n//# sourceURL=webpack:///./src/js/login.js?");
->>>>>>> buscador
 
 /***/ })
 
