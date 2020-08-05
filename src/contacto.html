@@ -60,38 +60,38 @@
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
-                <section class="fondocard my-5 fondo col-sm-12 col-lg-5 sombraform">
+                <section class="fondocard my-5 ml-5 fondo col-sm-12 col-lg-5 sombraform">
                     <div class="fondocard azul1 mt-2">
                         <h4 class="card-title text-light text-center mt-2">Envianos tu consulta</h4>
                     </div>
                     <div class="card-body text-light">
                         <form onsubmit="validarTodo(event)">
                             <div class="form-group">
-                                <label class="ml-4">Nombre</label>
+                                <label class="">Nombre *</label>
                                 <input type="text" class="form-control shadow" id="nombre" placeholder="Gabe Newell"
                                     onblur="validarNombre(this)">
                             </div>
                             <div class="form-group">
-                                <label class="ml-4">Email</label>
+                                <label class="">Email *</label>
                                 <input type="email" class="form-control shadow" id="email"
                                     placeholder="gabenewell@tumail.com" onblur="validarEmail(this)">
                             </div>
                             <div class="form-group">
-                                <label class="ml-4">Teléfono</label>
+                                <label class="">Teléfono *</label>
                                 <input type="number" class="form-control shadow" id="telefono"
                                     placeholder="381 5727 950" onblur="validarNumeros(this)">
                             </div>
                             <div class="form-group">
-                                <label class="ml-4">Consulta</label>
+                                <label class="">Consulta *</label>
                                 <textarea class="form-control shadow" id="consulta" placeholder="Ingrese su consulta"
                                     onblur="validarConsulta(this)"></textarea>
                             </div>
                             <!-- FORM CHECK -->
-                            <div class="form-group ml-4">
+                            <div class="form-group">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="terminos">
                                     <label class="form-check-label text-light">
-                                        Estoy de acuerdo con los términos y condiciones.
+                                        Estoy de acuerdo con los términos y condiciones. *
                                     </label>
                                     <div class="invalid-feedback text-light">
                                         Para continuar debe aceptar los términos y condiciones
@@ -100,7 +100,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn ml-4 botonredondeado gradientevioleta px-5 text-light shadow"
+                            <button class="btn botonredondeado gradientevioleta px-5 text-light shadow juegoInicio"
                                 type="submit">Enviar</button>
                         </form>
                         <div class="alert alert-primary my-4 d-none" role="alert" id="msjEnvio">
@@ -117,7 +117,7 @@
     <footer class="verde text-center py-4">
         <article class="container">
             <div class="row d-flex justify-content-center">
-                <button class="btn btn-lg btn-block botonredondeado gradientevioleta col-sm-12 col-lg-6">
+                <button class="btn btn-lg btn-block botonredondeado gradientevioleta col-sm-12 col-lg-6 juegoInicio">
                     <h2 class="text-center display-5 text-light"> ¿Ya te Registraste?
                     </h2>
                     <div class="d-flex flex-wrap justify-content-center">
@@ -129,7 +129,7 @@
                 </button>
                 <div class="container text-center">
                     <p class="lead my-4 d-flex flex-wrap justify-content-around">
-                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Rolling Games</strong>
+                        <a href="rollinggames.html"> <strong class="mx-2 text-decoration-none text-light">Rolling Games</strong>
                         </a>
                         <a href="nosotros.html"> <strong class="mx-2 text-decoration-none text-light">Acerca de
                                 Nosotros</strong>
