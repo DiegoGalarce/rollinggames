@@ -100,32 +100,34 @@ let botonBuscar = document.querySelector(`#botonBuscar`);
 let resultado = document.querySelector(`#resultados`);
 
 let productos = [
-    {codigo: `2233`, nombre: `Mark Of The Ninja`, categoria: `plataforma`},
-    {codigo: `1234`, nombre: `Blasphemous`, categoria: `rol`},
-    {codigo: `5677`, nombre: `CupHead`, categoria: `accion`},
-    {codigo: `6756`, nombre: `Redout`, categoria: `carreras`},
+    { codigo: `2233`, nombre: `Mark Of The Ninja`, categoria: `plataforma` },
+    { codigo: `1234`, nombre: `Blasphemous`, categoria: `rol` },
+    { codigo: `5677`, nombre: `CupHead`, categoria: `accion` },
+    { codigo: `6756`, nombre: `Redout`, categoria: `carreras` },
 ]
 
-let filtrar = ()=>{
+let filtrar = () => {
     console.log(buscar.value);
     resultado.innerHTML = ``;
     let texto = buscar.value.toLowerCase();
-    // event.preventDefault();
+    event.preventDefault();
 
 
-    for(let producto of productos){
+    for (let producto of productos) {
         let nombre = producto.nombre.toLocaleLowerCase();
-        if(nombre.indexOf(texto) !== -1){
-            resultado.innerHTML += `<li class= "transparente font-weight-bold text-light"><a class= "text-decoration-none" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
+        if (nombre.indexOf(texto) !== -1) {
+            resultado.innerHTML += `<li class= " botonredondeado font-weight-bold text-light"><a class="text-decoration-none" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
         }
     }
-    if(resultado.innerHTML ===``){
+    if (resultado.innerHTML === ``) {
         resultado.innerHTML += `<li> Juego no encontrado... </li>`
-    }else{
-        
     }
 }
-botonBuscar.addEventListener(`click`,filtrar);
- buscar.addEventListener(`keyup`,filtrar);
-// filtrar();
-  
+let filtrar1 = () => {
+    resultado.innerHTML = `Busca un Juego primero!`;
+    event.preventDefault();
+}
+botonBuscar.addEventListener(`click`, filtrar1);
+buscar.addEventListener(`keyup`, filtrar);
+
+

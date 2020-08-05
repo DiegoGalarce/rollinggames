@@ -20,7 +20,7 @@
     background: linear-gradient(0deg, rgba(25,64,91,1) 0%, rgba(51,124,166,1) 100%);
 }
  .margensup{
-      margin-top: 80px;
+      margin-top: 68px;
  }
  .botonredondeado {
       border-radius: 200px;
@@ -146,11 +146,3 @@
          transition: 0.2s;
      }
  }
-.transparente{
-    background-color: #171D21; opacity: 0,1;
-    color: whitesmoke;
-}
-a{
-    color: #0060B6;
-    text-decoration: none;
-}
