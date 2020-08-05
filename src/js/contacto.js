@@ -94,4 +94,40 @@ function enviarEmail() {
         }
     )
 }
+// BUSCADOR: falta reemplazar por un llamador desde un array de local storage para totalfuncionalidad.
+let buscar = document.querySelector(`#buscar`);
+let botonBuscar = document.querySelector(`#botonBuscar`);
+let resultado = document.querySelector(`#resultados`);
+
+let productos = [
+    { codigo: `2233`, nombre: `Mark Of The Ninja`, categoria: `plataforma` },
+    { codigo: `1234`, nombre: `Blasphemous`, categoria: `rol` },
+    { codigo: `5677`, nombre: `CupHead`, categoria: `accion` },
+    { codigo: `6756`, nombre: `Redout`, categoria: `carreras` },
+]
+
+let filtrar = () => {
+    console.log(buscar.value);
+    resultado.innerHTML = ``;
+    let texto = buscar.value.toLowerCase();
+    event.preventDefault();
+
+
+    for (let producto of productos) {
+        let nombre = producto.nombre.toLocaleLowerCase();
+        if (nombre.indexOf(texto) !== -1) {
+            resultado.innerHTML += `<li class= " botonredondeado font-weight-bold text-light"><a class="text-decoration-none" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
+        }
+    }
+    if (resultado.innerHTML === ``) {
+        resultado.innerHTML += `<li> Juego no encontrado... </li>`
+    }
+}
+let filtrar1 = () => {
+    resultado.innerHTML = `Busca un Juego primero!`;
+    event.preventDefault();
+}
+botonBuscar.addEventListener(`click`, filtrar1);
+buscar.addEventListener(`keyup`, filtrar);
+
 
