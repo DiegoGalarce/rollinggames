@@ -41,15 +41,10 @@
                         </li>
                     </ul>
                     <form class="form-inline">
-                        <input class="form-control" type="text" id="formulario" placeholder="Buscar Juego">
-                        <button class="btn my-2 text-white d-none d-sm-block" id="boton"><i
+                        <input class="form-control " type="text" id="buscar" placeholder="Buscar Juego">
+                        <button class="btn my-2 text-white d-none d-sm-block" id="botonBuscar"><i
                                 class="fas fa-search fa-2x"></i>
                         </button>
-
-                        <ul class="text-light" id="resultado">
-                        </ul>
-
-
                     </form>
                 </div>
             </div>
@@ -58,6 +53,12 @@
     </header>
     <section class="fondo container-fluid margensup">
         <article class="container">
+            <div class="row-reverse mx-5">
+                <div class="transparente d-flex justify-content-end" role="alert">
+                    <ul class="text-light" id="resultados">
+                    </ul>
+                </div>
+            </div>
             <div class="row d-flex justify-content-center">
                 <section class="fondocard my-5 fondo col-sm-12 col-lg-5 sombraform">
                     <div class="fondocard azul1 mt-2">
