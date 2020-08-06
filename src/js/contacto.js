@@ -103,32 +103,28 @@ let productos = [
     { codigo: `5677`, nombre: `CupHead`, categoria: `accion` },
     { codigo: `6756`, nombre: `Redout`, categoria: `carreras` },
 ]
-    function filtrar(){
-        console.log(buscar.value);
-        resultado.innerHTML = ``;
-        let texto = buscar.value.toLowerCase();
+function filtrar() {
+    console.log(buscar.value);
+    resultado.innerHTML = ``;
+    let texto = buscar.value.toLowerCase();
 
-        event.preventDefault();
-        for (let producto of productos) {
-            let nombre = producto.nombre.toLocaleLowerCase();
-            if (nombre.indexOf(texto) !== -1) {
-                resultado.innerHTML += `<li class= "botonredondeado font-weight-bold text-light"><a class="text-decoration-none" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
-            }if(buscar.innerHTML === ``){
-                `<li class= "d-none"><a class="d-none" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
-            }
-        }
-        if (resultado.innerHTML === ``) {
-            resultado.innerHTML += `<li> Juego no encontrado... </li>`
+    event.preventDefault();
+    for (let producto of productos) {
+        let nombre = producto.nombre.toLocaleLowerCase();
+        if (nombre.indexOf(texto) !== -1) {
+            resultado.innerHTML += `<li class= "botonredondeado font-weight-bold text-light"><a class="text-decoration-none text-light" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
+        } if (buscar.innerHTML === ``) {
+            `<li class= "d-none"><a class="d-none" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
         }
     }
-
-
-    function filtrar1(){
-        resultado.innerHTML = `Busca un Juego segundo!`;
-        event.preventDefault();
-        
+    if (resultado.innerHTML === ``) {
+        resultado.innerHTML += `<li> Juego no encontrado... </li>`
     }
+}
+function filtrar1() {
+    resultado.innerHTML = `Busca un Juego segundo!`;
+    event.preventDefault();
 
-
+}
 botonBuscar.addEventListener(`click`, filtrar1);
 buscar.addEventListener(`keyup`, filtrar);
