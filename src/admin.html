@@ -1,11 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rolling Games</title>
+    <meta name="author" content="Mauricio G. Castro, Daiana Olmi, Diego Galarce, Luciano Chipolina">
+    <meta name="description" content="Pagina web dedicada a la venta de juegos Indie">
+    <meta name="keywords"
+        content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia">
 </head>
+
 <body>
-    <img src="img/prueba.png" alt="">
-</body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark azul1">
+            <div class="container">
+                <a href="index.html"> <img class="juegoInicio" src="img/logo/Logo-glow.png" alt="logo rolling games" height="50px">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Cerrar Sesión</a>
+                        </li>
+                        <li class="nav-item mr-5 active text-light">
+                            <a class="nav-link" href="#">Administración</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <input class="form-control " type="search" id="buscar" placeholder="Buscar Juego">
+                        <button class="btn my-2 text-white d-none d-sm-block" id="botonBuscar"><i
+                                class="fas fa-search fa-2x"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main class="fondo container-fluid">
+        <main class="container">
+            <section class="row">
+                <div class="col-sm-12 col-md-12">
+                    <h1 class="text-center display-5 text-light rounded-pill">Administrar juegos</h1>
+                </div>
+            </section>
+            <section>
+                <hr>
+                <article class="row my-4">
+                    <div class="col-sm-12 col-md-12 text-center">
+                        <h3 class="text-center text-light rounded-pill">Tabla de juegos</h3>
+                    </div>
+                    <div class="col-sm-12 col-md-3 col-lg-3 text-light ml-auto">
+                        <button
+                            class="btn btn-block botonredondeado gradientevioleta px-5 text-light shadow juegoInicio"
+                            data-toggle="modal" data-target="#modal" onclick="limpiarFormulario()">Agregar</button>
+                    </div>
+                </article>
+                <article class="row">
+                    <table class="table table-bordered col-sm-12 col-md-12">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Codigo</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Publicado</th>
+                                <th scope="col">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaProductos">
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo juego</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body text-dark">
+                            <form id="formulario">
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput">Codigo</label>
+                                    <input type="number" class="form-control" id="codigo" placeholder="1234"
+                                        onblur="validarCodigo(this)" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese un codigo valido
+                                    </div>
+                                    <div class="valid-feedback">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Mario Bross"
+                                        onblur="validarNombre(this)" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese un nombre de juego valido
+                                    </div>
+                                    <div class="valid-feedback">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Categoria</label>
+                                    <select class="form-control" id="categoria" onblur="validarCategoria(this)">
+                                        <option></option>
+                                        <option>Acción</option>
+                                        <option>Aventura</option>
+                                        <option>Carreras</option>
+                                        <option>Estrategia</option>
+                                        <option>Plataforma</option>
+                                        <option>Rol</option>
+                                        <div class="invalid-feedback">
+                                            Debe seleccionar una categoria
+                                        </div>
+                                        <div class="valid-feedback">
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Descripcion "minimo 10 palabras"</label>
+                                    <input type="text" class="form-control" id="descripcion"
+                                        placeholder="Ingrese una Descripcion" onblur="validarDescripcion(this)"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Debe ingresar una descripcion
+                                    </div>
+                                    <div class="valid-feedback">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Imagen</label>
+                                    <input type="text" class="form-control" id="imagen"
+                                        placeholder="Ingrese un nombre de imagen">
+                                </div>
+                                <button type="button"
+                                    class="btn botonredondeado gradientevioleta px-5 text-light shadow juegoInicio"
+                                    onclick="validarGeneral(event)">Guardar</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer bg-dark">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div><br><br><br><br></div>
+        </main>
+
+    </main>
+    
+
+    <footer class="verde text-center mt-5 py-4">
+        <article class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="container text-center">
+                    <p class="lead my-4 d-flex flex-wrap justify-content-around">
+                        <a href="rollinggames.html"> <strong class="mx-2 text-decoration-none text-light">Rolling
+                                Games</strong>
+                        </a>
+                        <a href="nosotros.html"> <strong class="mx-2 text-decoration-none text-light">Acerca de
+                                Nosotros</strong>
+                        </a>
+                        <a href="contacto.html"> <strong class="mx-2 text-decoration-none text-light">Contacto</strong>
+                        </a>
+                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Soporte</strong>
+                        </a>
+                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Webs Amigas</strong>
+                        </a>
+                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">GamePlays</strong>
+                        </a>
+                    </p>
+                    <div class="my-2 text-white d-flex flex-wrap justify-content-center">
+                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
+                                    class="fab fa-facebook-square fa-2x mr-2 text-light "></i></a>
+                            /RollingGames</div>
+                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
+                                    class="fab fa-twitter-square fa-2x mx-2 text-light"></i></a>
+                            /RollingGames</div>
+                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
+                                    class="fab fa-instagram-square fa-2x ml-2 text-light"></i></a>
+                            @RollingGames</div>
+                    </div>
+                </div>
+        </article>
+        <p class="mt-4 text-light">
+            <small>&copy; Todos los Derechos Reservados</small></p>
+        </div>
+    </footer>
+
 </html>

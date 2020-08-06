@@ -2,11 +2,15 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
- 
+
 module.exports = {
   entry: {
       index: './src/js/index.js',
-      admin: './src/js/admin.js'},
+      admin: './src/js/admin.js',
+      registro: './src/js/registro.js',
+    contacto: './src/js/contacto.js',
+    infoJuegos: './src/js/infoJuegos.js',
+    login: './src/js/login.js'},
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist')
@@ -85,7 +89,7 @@ module.exports = {
           useShortDoctype: true
         },
         inject: true,
-        chunks: ['admin'],
+        chunks: ['contacto'],
         filename: './contacto.html'
     }),
     new HtmlWebpackPlugin({
@@ -99,7 +103,7 @@ module.exports = {
           useShortDoctype: true
         },
         inject: true,
-        chunks: ['admin'],
+        chunks: ['login'],
         filename: './login.html'
     }),
     new HtmlWebpackPlugin({
@@ -127,11 +131,11 @@ module.exports = {
           useShortDoctype: true
         },
         inject: true,
-        chunks: ['admin'],
+        chunks: ['registro'],
         filename: './registro.html'
     }),
     new HtmlWebpackPlugin({
-        template: './src/detallejuego.html',
+        template: './src/juegoplataformauno.html',
         minify:{
           collapseWhitespace: true,
           removeComments: true,
@@ -142,8 +146,92 @@ module.exports = {
         },
         inject: true,
         chunks: ['admin'],
-        filename: './detallejuego.html'
+        filename: './juegoplataformauno.html'
     }),
+    new HtmlWebpackPlugin({
+      template: './src/juegoaccionuno.html',
+      minify:{
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true
+      },
+      inject: true,
+      chunks: ['admin'],
+      filename: './juegoaccionuno.html'
+  }),
+  new HtmlWebpackPlugin({
+    template: './src/juegoaventurauno.html',
+    minify:{
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: true
+    },
+    inject: true,
+    chunks: ['admin'],
+    filename: './juegoaventurauno.html'
+}),
+new HtmlWebpackPlugin({
+  template: './src/juegocarrerauno.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['admin'],
+  filename: './juegocarrerauno.html'
+}),
+new HtmlWebpackPlugin({
+  template: './src/juegoestrategiauno.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['admin'],
+  filename: './juegoestrategiauno.html'
+}),
+new HtmlWebpackPlugin({
+  template: './src/rollinggames.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['admin'],
+  filename: './rollinggames.html'
+}),
+new HtmlWebpackPlugin({
+  template: './src/infoJuegos.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['infoJuegos'],
+  filename: './infoJuegos.html'
+}),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'
     }),
@@ -159,5 +247,3 @@ module.exports = {
 
 ],
 };
-
-
