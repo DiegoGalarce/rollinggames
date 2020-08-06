@@ -10,6 +10,7 @@ module.exports = {
       registro: './src/js/registro.js',
     contacto: './src/js/contacto.js',
     infoJuegos: './src/js/infoJuegos.js',
+    detalleJuego: './src/js/detalleJuegos.js',
     login: './src/js/login.js'},
   output: {
     filename: 'js/[name].js',
@@ -229,7 +230,7 @@ new HtmlWebpackPlugin({
     useShortDoctype: true
   },
   inject: true,
-  chunks: ['infoJuegos'],
+  chunks: ['detalleJuego'],
   filename: './infoJuegos.html'
 }),
     new MiniCssExtractPlugin({

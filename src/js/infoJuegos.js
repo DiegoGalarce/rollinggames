@@ -88,24 +88,3 @@ function dibujarJuego(juegoEncontrado) {
     }
 
 }
-
-    // dibujarJuego(juegoEncontrado);
-    // function dibujarJuego(juegoEncontrado) {
-    //     console.log(juegoEncontrado)
-    //     let detalleJuego = document.getElementById("detalleJuego");
-    //     console.log(detallejuego)
-    
-    //     for (let i in juegoEncontrado) {
-    //         let codHtml = `<div class="row no-gutters" id="${juegoEncontrado[i].codigo}">
-    //         <div class="col-md-4">
-    //             <img src="img/${juegoEncontrado[i].imagen}" class="card-img" alt="${juegoEncontrado[i].nombre}">
-    //         </div>
-    //         <div class="col-md-8">
-    //             <div class="card-body mx-4">
-    //                 <h2 class="card-title my-5"> <strong>${juegoEncontrado[i].nombre}</strong> </h2>
-    //                 <h4 class="card-text">${juegoEncontrado[i].descripcion}</h4>
-    //             </div></div></div>`;
-    //         detalleJuego.innerHTML = codHtml;
-    //     }
-    
-    // }
