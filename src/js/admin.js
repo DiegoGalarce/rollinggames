@@ -1,10 +1,9 @@
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
-import '../css/style.css';
-import Juego from './juego.js';
-import $ from 'jquery';
-import '@fortawesome/fontawesome-free/js/all.min.js';
+import '../css/style.css'
+import Juego from './juego.js'
+import $ from 'jquery'
+import '@fortawesome/fontawesome-free/js/all.min.js'
 
 let listaJuegos = [];
 leerJuegos();
