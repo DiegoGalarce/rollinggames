@@ -111,7 +111,7 @@ let productos = [
         for (let producto of productos) {
             let nombre = producto.nombre.toLocaleLowerCase();
             if (nombre.indexOf(texto) !== -1) {
-                resultado.innerHTML += `<li class= " botonredondeado font-weight-bold text-light"><a class="text-decoration-none" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
+                resultado.innerHTML += `<li class= " botonredondeado font-weight-bold text-light"><a class="text-decoration-none text-light" href="juegoaccionuno.html">${producto.nombre} - Categoria: ${producto.categoria}</a></li>`
             }
         }
         if (resultado.innerHTML === ``) {
@@ -119,7 +119,7 @@ let productos = [
         }
     }
     function filtrar1(){
-        resultado.innerHTML = `Busca un Juego segundo!`;
+        resultado.innerHTML = `Busca un Juego primero!`;
         event.preventDefault();
     }
 botonBuscar.addEventListener(`click`, filtrar1);
