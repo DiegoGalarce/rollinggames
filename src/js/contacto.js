@@ -15,7 +15,6 @@ window.validarNombre = function (input) {
 
 window.validarEmail = function (input) {
     console.log();
-    //correo@correo.com  EXPRESIONES REGULARES
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (input.value != "" && expresion.test(input.value)) {
         input.className = "form-control is-valid";
@@ -92,7 +91,7 @@ function enviarEmail() {
         }
     )
 }
-// BUSCADOR: falta reemplazar por un llamador desde un array de local storage para totalfuncionalidad.
+
 let buscar = document.querySelector(`#buscar`);
 let botonBuscar = document.querySelector(`#botonBuscar`);
 let resultado = document.querySelector(`#resultados`);

@@ -19,7 +19,6 @@ window.agregarJuego = function agregarJuego() {
     let descripcion = document.getElementById('descripcion').value;
     let imagen = document.getElementById('imagen').value;
 
-    //validar general de todos los datos
 
     console.log(document.getElementById('a'));
     let juegoNuevo = new Juego(codigo, nombre, categoria, descripcion, imagen);
@@ -99,9 +98,7 @@ function leerJuegos() {
         if (listaJuegos.length == 0) {
             listaJuegos = arregloJuego;
         }
-        //borrar filas de la tabla
         borrarFilas();
-        //dibujar filas
         dibujarFilas(arregloJuego);
     }
 }
