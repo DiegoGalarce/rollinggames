@@ -9,6 +9,7 @@ module.exports = {
       admin: './src/js/admin.js',
       registro: './src/js/registro.js',
     contacto: './src/js/contacto.js',
+    infoJuegos: './src/js/infoJuegos.js',
     login: './src/js/login.js'},
   output: {
     filename: 'js/[name].js',
@@ -216,6 +217,20 @@ new HtmlWebpackPlugin({
   inject: true,
   chunks: ['admin'],
   filename: './rollinggames.html'
+}),
+new HtmlWebpackPlugin({
+  template: './src/infoJuegos.html',
+  minify:{
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeScriptTypeAttributes: true,
+    removeStyleLinkTypeAttributes: true,
+    useShortDoctype: true
+  },
+  inject: true,
+  chunks: ['infoJuegos'],
+  filename: './infoJuegos.html'
 }),
     new MiniCssExtractPlugin({
         filename: 'css/style.css'

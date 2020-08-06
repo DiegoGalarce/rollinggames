@@ -11,9 +11,9 @@ function leerJuegos() {
 
         for (let i in listaJuegos) {
 
-            let codHtml = `<article class="" id="${listaJuegos[i].codigo}">
+            let codHtml = `<article class="ol-sm-12 col-md-3 col-md-3 d-flex justify-content-between juegoInicio my-3" id="${listaJuegos[i].codigo}">
             
-                       <div class="col-sm-12 col-md-3 col-md-3 d-flex justify-content-between juegoInicio my-3">
+                       <div class="c">
                    <div class="card borde">
                            <img class="card-img-top" src="img/${listaJuegos[i].imagen}"
                                alt="${listaJuegos[i].nombre}">
