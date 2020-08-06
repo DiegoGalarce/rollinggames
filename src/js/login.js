@@ -26,7 +26,7 @@ window.validarPass = function(input) {
     }
 }
 
-function ingresar(){
+function ingresar(){ 
     event.preventDefault();
     if(usuario.value == "admin" && pass.value == "admin"){
         window.location.href = "admin.html";
