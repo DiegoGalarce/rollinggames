@@ -8,10 +8,7 @@ let juegoEncontrado = JSON.parse(localStorage.getItem("juegoEncontrado"));
 dibujarJuego(juegoEncontrado);
 
 function dibujarJuego(juegoEncontrado) {
-
     let juegoJuego = document.getElementById("detalleJuego");
-
-
     let codHtml = `<article id="${juegoEncontrado.codigo}"
         <div class="row no-gutters">
         <div class="col-md-4">
