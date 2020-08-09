@@ -1,11 +1,177 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rolling Games</title>
+    <meta name="author" content="Mauricio G. Castro, Daiana Olmi, Diego Galarce, Luciano Chipolina">
+    <meta name="description" content="Pagina web dedicada a la venta de juegos Indie">
+    <meta name="keywords"
+        content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia">
 </head>
+
 <body>
-    <img src="img/prueba.png" alt="">
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark azul1">
+            <div class="container">
+                <a href="index.html"> <img src="img/logo/Logo-glow.png" alt="logo rolling games" height="50px">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item mr-5">
+                            <a class="nav-link" href="registro.html">Registrarse</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline">
+                        <input class="form-control" type="search" placeholder="Buscar Juego">
+                        <button class="btn my-2 text-white d-none d-sm-block" type="submit"><i
+                                class="fas fa-search fa-2x"></i></button>
+                    </form>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="fondo container-fluid margensupregistro">
+            <article class="fondo mb-5 pb-2">
+                <div class="container">
+                    <div class="text-center">
+                        <img src="img/logo/Logo-glow.png" alt="logo rolling games" id="imagenLogin">
+                        <h2 class="text-center display-5 text-light  rounded-pill p-3 ">INICIAR SESIÓN</h2>
+                        <h6 class="text-center text-light">Todos los campos marcados son obligatorios.</h6>
+
+                    </div>
+                    <form onsubmit="validarForm(event)" id="formularioLogin" class="mt-4 shadow p-3 mb-5 rounded">
+                        <div class="text-center">
+                            <div class="form-group text-light">
+                                <input class="form-control w-75" type="text" placeholder="Usuario" id="inputUsuario"
+                                    onblur="validarUsuario(this)">
+                                <div class="invalid-feedback">Debe ingresar un usuario.</div>
+                            </div>
+                            <div class="form-group text-light">
+                                <input class="form-control w-75" type="password" placeholder="Contraseña"
+                                    id="inputPassword" onblur="validarPass(this)">
+                                <div class="invalid-feedback">Debe ingresar una contraseña.</div>
+                                <div class="text-center">
+                                    <button type="submit"
+                                        class="btn botonredondeado gradientevioleta mt-3 mb-2 px-5 text-light shadow"
+                                        id="botonLogin">
+                                        Ingresar
+                                    </button>
+                                </div>
+                                <a href="" data-toggle="modal" data-target="#modalRecuperar"
+                                    class="text-light text-center"><small>Recuperar contraseña</small></a>
+                                <!-- Modal Recuperar contraseña -->
+                                <div class="modal fade" id="modalRecuperar" tabindex="-1" role="dialog"
+                                    aria-labelledby="modalRecuperarTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title text-dark" id="modalRecuperarTitle">Pasos para
+                                                    recuperar contraseña</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body text-dark">
+                                                <ol>
+                                                    <li>Envía un mail a soporte@rollinggames.com con asunto "Recuperar
+                                                        contraseña", adjuntando el nombre de usuario y correo
+                                                        electrónico con el que estás registrado.</li>
+                                                    <li class="my-3">Espera una respuesta dentro de las 48 hs hábiles.
+                                                    </li>
+                                                    <li>Ingresa la nueva contraseña que se te ha asignado.</li>
+                                                </ol>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Cerrar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h6 class="text-center text-light rounded-pill pt-3 pb-1">Ingresá con tus Redes
+                                Sociales:</h6>
+                            <div class="row d-flex flex-wrap justify-content-center pb-3">
+                                <div class="mx-2"><a href="404.html">
+                                        <i
+                                            class="fab fa-facebook-square fa-3x mr-2 colorRedes shadow juegoInicio"></i></a>
+                                </div>
+                                <div class="mx-2"><a href="404.html">
+                                        <i
+                                            class="fab fa-instagram-square fa-3x mr-2 colorRedes shadow juegoInicio"></i></a>
+                                </div>
+
+                                <div class="mx-2"><a href="404.html">
+                                        <i
+                                            class="fab fa-twitter-square fa-3x mr-2 colorRedes shadow juegoInicio"></i></a>
+                                </div>
+
+                                <div class="mx-2"><a href="404.html">
+                                        <i
+                                            class="fab fa-google-plus-square fa-3x mr-2 colorRedes shadow juegoInicio"></i></a>
+                                </div>
+                            </div>
+                    </form>
+
+                    <div class="alert alert-danger my-4 d-none" role="alert" id="alertaError">
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="verde text-center">
+        <article class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="container text-center">
+                    <p class="lead my-4 d-flex flex-wrap justify-content-around">
+                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Rolling Games</strong>
+                        </a>
+                        <a href="nosotros.html"> <strong class="mx-2 text-decoration-none text-light">Acerca de
+                                Nosotros</strong>
+                        </a>
+                        <a href="contacto.html"> <strong class="mx-2 text-decoration-none text-light">Contacto</strong>
+                        </a>
+                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Soporte</strong>
+                        </a>
+                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Webs Amigas</strong>
+                        </a>
+                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">GamePlays</strong>
+                        </a>
+                    </p>
+                    <div class="my-2 text-white d-flex flex-wrap justify-content-center">
+                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
+                                    class="fab fa-facebook-square fa-2x mr-2 text-light"></i></a>
+                            /RollingGames</div>
+                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
+                                    class="fab fa-twitter-square fa-2x mx-2 text-light"></i></a>
+                            /RollingGames</div>
+                        <div class="d-flex align-items-center"><a href="404.html" target="_blank"><i
+                                    class="fab fa-instagram-square fa-2x ml-2 text-light"></i></a>
+                            @RollingGames</div>
+                    </div>
+                </div>
+        </article>
+        <p class="mt-4 text-light">
+            <small>&copy; Todos los Derechos Reservados</small></p>
+        </div>
+    </footer>
 </body>
+
 </html>
