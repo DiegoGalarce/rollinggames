@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -11,11 +11,11 @@
         content="games, juegos, indie, independientes, aventura, accion, carreras, rol, rpg, platadormas, Estrategia">
 </head>
 
-<body class="fondoadmin">
+<body>
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark azul1">
             <div class="container">
-                <a href="index.html"><img src="img/Logo-glow.png" alt="logo rolling games" height="50px">
+                <a href="index.html"> <img src="img/logo/Logo-glow.png" alt="logo rolling games" height="50px">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -23,39 +23,43 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto ">
+                    <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="login.html">Cerrar Sesión</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="registro.html">Registrarse</a>
-                        </li>
-                        <li class="nav-item mr-5 active">
+                        <li class="nav-item mr-5 active text-light">
                             <a class="nav-link" href="#">Administración</a>
                         </li>
                     </ul>
+                    <form class="form-inline">
+                        <input class="form-control " type="search" id="buscar" placeholder="Buscar Juego">
+                        <button class="btn my-2 text-white d-none d-sm-block" id="botonBuscar"><i
+                                class="fas fa-search fa-2x"></i>
+                        </button>
+                    </form>
                 </div>
+            </div>
             </div>
         </nav>
     </header>
-    <main class="container">
+    <main class="fondo container-fluid margensup">
         <section class="row">
-            <div class="col-10">
-                <h1 class="display-4 text-center">Administrar juegos</h1>
+            <div class="col-sm-12 col-md-12">
+                <h1 class="text-center display-5 text-light  rounded-pill p-3 m-5">Administrar juegos</h1>
             </div>
         </section>
         <section>
             <hr>
             <article class="row my-4">
-                <div class="col-10 text-center">
-                    <h3 class="text-center">Tabla de juegos</h3>
+                <div class="col-sm-12 col-md-12 text-center">
+                    <h3 class="text-center text-light  rounded-pill">Tabla de juegos</h3>
                 </div>
-                <div class="col-2 text-light">
-                    <button class="btn btn-dark" data-toggle="modal" data-target="#modal"
-                        onclick="limpiarFormulario()">Agregar</button>
+                <div class="col-sm-12 col-md-3 col-lg-3 text-light ml-auto">
+                    <button class="btn btn-block botonredondeado gradientevioleta px-5 text-light shadow juegoInicio"
+                        data-toggle="modal" data-target="#modal" onclick="limpiarFormulario()">Agregar</button>
                 </div>
             </article>
             <article>
@@ -76,83 +80,89 @@
                 </table>
             </article>
         </section>
-    </main>
-    <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-dark text-light">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo juego</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-dark">
-                    <form id="formulario">
-                        <div class="form-group">
-                            <label for="formGroupExampleInput">Codigo</label>
-                            <input type="number" class="form-control" id="codigo" placeholder="1234"
-                            onblur="validarCodigo(this)" required>
-                            <div class="invalid-feedback">
-                                Ingrese un codigo valido
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-dark text-light">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar un nuevo juego</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-dark">
+                        <form id="formulario">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Codigo</label>
+                                <input type="number" class="form-control" id="codigo" placeholder="1234"
+                                    onblur="validarCodigo(this)" required>
+                                <div class="invalid-feedback">
+                                    Ingrese un codigo valido
+                                </div>
+                                <div class="valid-feedback">
+                                </div>
                             </div>
-                            <div class="valid-feedback">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Mario Bross"
+                                    onblur="validarNombre(this)" required>
+                                <div class="invalid-feedback">
+                                    Ingrese un nombre de juego valido
+                                </div>
+                                <div class="valid-feedback">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Mario Bross" onblur="validarNombre(this)" required>
-                            <div class="invalid-feedback">
-                                Ingrese un nombre de juego valido
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Categoria</label>
+                                <select class="form-control" id="categoria" onblur="validarCategoria(this)">
+                                    <option></option>
+                                    <option>Acción</option>
+                                    <option>Aventura</option>
+                                    <option>Carreras</option>
+                                    <option>Estrategia</option>
+                                    <option>Plataforma</option>
+                                    <option>Rol</option>
+                                    <div class="invalid-feedback">
+                                        Debe seleccionar una categoria
+                                    </div>
+                                    <div class="valid-feedback">
+                                    </div>
                             </div>
-                            <div class="valid-feedback">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Descripcion "minimo 10 palabras"</label>
+                                <input type="text" class="form-control" id="descripcion"
+                                    placeholder="Ingrese una Descripcion" onblur="validarDescripcion(this)" required>
+                                <div class="invalid-feedback">
+                                    Debe ingresar una descripcion
+                                </div>
+                                <div class="valid-feedback">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Categoria</label>
-                            <select class="form-control" id="categoria" onblur="validarCategoria(this)">
-                                <option></option>
-                                <option>Acción</option>
-                                <option>Aventura</option>
-                                <option>Carreras</option>
-                                <option>Estrategia</option>
-                            <div class="invalid-feedback">
-                               Debe seleccionar una categoria
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2">Imagen</label>
+                                <input type="text" class="form-control" id="imagen"
+                                    placeholder="Ingrese un nombre de imagen">
                             </div>
-                            <div class="valid-feedback">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Descripcion "minimo 10 palabras"</label>
-                            <input type="text" class="form-control" id="descripcion"
-                                placeholder="Ingrese una Descripcion" onblur="validarDescripcion(this)" required>
-                            <div class="invalid-feedback">
-                                Debe ingresar una descripcion
-                            </div>
-                            <div class="valid-feedback">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput2">Imagen</label>
-                            <input type="text" class="form-control" id="imagen"
-                                placeholder="Ingrese un nombre de imagen">
-                        </div>
-                        <button type="button" class="btn btn-primary" onclick="validarGeneral(event)">Guardar</button>
-                    </form>
-                </div>
-                <div class="modal-footer bg-dark">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            <button type="button"
+                                class="btn botonredondeado gradientevioleta px-5 text-light shadow juegoInicio"
+                                onclick="validarGeneral(event)">Guardar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer bg-dark">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     <footer class="verde text-center py-4">
         <article class="container">
             <div class="row d-flex justify-content-center">
                 <div class="container text-center">
                     <p class="lead my-4 d-flex flex-wrap justify-content-around">
-                        <a href="404.html"> <strong class="mx-2 text-decoration-none text-light">Rolling Games</strong>
+                        <a href="rollinggames.html"> <strong class="mx-2 text-decoration-none text-light">Rolling
+                                Games</strong>
                         </a>
                         <a href="nosotros.html"> <strong class="mx-2 text-decoration-none text-light">Acerca de
                                 Nosotros</strong>
